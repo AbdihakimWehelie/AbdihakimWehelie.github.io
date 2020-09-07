@@ -40,16 +40,17 @@
 
 
 #grid_content{
-	grid-auto-rows:minmax(20px,65px);
-    grid-template-colums:repeat(4,1fr);
+		display: grid;
+		grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+	border: 3px solid blue;
 	
 }
 
 .contentBox{
-	grid-template-columns: 50% 50%;
-      grid-template-rows: 50% 50%;
-	border: 1px solid blue;
-	
+	width: 200px;
+	height:150px;
+	border: 1px solid green;
 	
 }
 
