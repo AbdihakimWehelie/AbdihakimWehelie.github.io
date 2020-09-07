@@ -13,19 +13,39 @@
     grid-template-colums:repeat(6,1fr);
     
   }
+  
   .box{
     border: 1px solid red;
     background: #F8FA9D;
     }
+	
+	
+	
+	
   .header{
     grid-area: 1 / 1 / span 2 / span 4;
   }
+  
   .footer{
     grid-area: 4 / 1 / span 2 / span 4;
   }
+  
   .sidebar{
     grid-area: 2 / 1 / span 2 / span 1;
   }
+  
   .content{
     grid-area: 2 / 2 / span 2 / span 3;
   }
+
+
+#grid_content{
+	grid-auto-rows:minmax(20px,65px);
+    grid-template-colums:repeat(4,1fr);
+	
+}
+
+.contentBox{
+	
+	
+}
