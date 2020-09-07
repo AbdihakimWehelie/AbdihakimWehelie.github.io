@@ -38,9 +38,9 @@
     grid-area: 2 / 2 / span 2 / span 3;
   }
 
-
+/* made for the nested content*/
 #grid_content{
-		display: grid;
+		display: flex;
 		grid-template-columns: 50% 50%;
       grid-template-rows: 50% 50%;
 	border: 3px solid blue;
