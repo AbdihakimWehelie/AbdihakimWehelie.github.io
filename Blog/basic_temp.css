@@ -1,16 +1,10 @@
  .container{
-    /* Step 1: Set display to grid */
-      display:grid;
-   /* Step 2: setup rows amd columns 
-      grid-template-columns: 300px 300px 300px;
-      grid-template-rows: 250px 600px;
-      grid-template-areas: 
-      "hd hd hd hd hd hd hd hd"
-      "sd sd sd main main main main main"
-      "ft ft ft ft ft ft ft ft";*/
-      border: 2px solid yellow;
+    
+    display:grid;
+   
+    border: 2px solid yellow;
     grid-auto-rows:minmax(50px,135px);
-    grid-template-colums:repeat(6,1fr);
+    grid-template-colums:repeat(4,2fr);
     
   }
   
@@ -58,13 +52,13 @@
 
 #box1{
 
-	background-image: url('/Fates_pg.jpg');
+	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 }
 
 
 #box2{
 
-	background-image: url('/Fates_pg.jpg');
+	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 }
