@@ -7,80 +7,36 @@
 
 @media(max-width:600px) {
   
-   .container{
+  /* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header "
+    "content "
+    "main "
+    "footer";
     
-    display:grid;
-   
-    border: 2px solid yellow;
-    grid-auto-rows:minmax(60px,180px);
-    grid-template-colums:repeat(4,2fr);
-    min-width: 250px;
-  	position: relative;
-    
-    
-  }
+    column-gap:10px;
+    row-gap:8px;
+	
+}
 
-  
-  
-  body{
-   background:#F8FA9E;
- }
- 
- 
- 
-  .header{
-  	display:flex;
-    grid-area: 1 / 1 / span 2 / span 4;
-  }
-  
-  .footer{
-    grid-area: 4 / 1 / span 1 / span 4;
-    display:flex;
-  }
-  
-  .sidebar{
-  	display: flex;
-    grid-area: sd;
-     width: 100%;
-    height: auto;
-    position: relative;
-    float:left;
-    text-align: center;
-  }
-  
-  .content{
-  	display:flex;
-    grid-area: main;
-  }
-  
-  
-  .contentBox{
-  	display:flex;
-    flex-direction:column;
-	width: 100px;
-	height:778px;
+.contentBox{
+	width: 190px;
+	height:178px;
 	border: 1px solid green;
     column-gap: 2px;
     background:#d9ffb3;
 	
 }
-  
-  
-  #grid_content{
-	display: flex;
-  grid
-flex-direction:column;
-	border: 3px solid blue;
-    grid-auto-rows:minmax(60px,120px);
-    grid-template-colums:repeat(2,2fr);
-    column-gap:15px;
-    row-gap:8px;
-	
-}
 
-#box1{
+ 
+ #box1{
 	display: flex;
     align-self:flex-start;
+    grid-area:header;
 	background-image: url("paris.jpg");
 	background-size:contain;
 	background-repeat:none;
@@ -91,6 +47,7 @@ flex-direction:column;
 #box2{
 	display: flex;
     align-self:baseline;
+    grid-area: header;
 	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 	background-repeat:none;
@@ -98,16 +55,64 @@ flex-direction:column;
 
 #box3{
 	display: flex;
-    align-self:flex-end;
+    align-self:flex-start;
+    /*grid-area:sd main;*/
 	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 	background-repeat:none;
     /*grid-area:footer;*/
 }
 
- 
- 
+#box4{
+	display: flex;
+    align-self:flex-start;
+    /*grid-area:main;*/
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
 
+#box5{
+	display: flex;
+    align-self:flex-start;
+    /*grid-area:main;*/
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    /*grid-area:footer;*/
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    /*grid-area:footer;*/
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    /*grid-area:footer;*/
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
 
 }
 
@@ -116,12 +121,12 @@ flex-direction:column;
     
     display:grid;
    
-    border: 2px solid yellow;
+   /* border: 2px solid yellow;
     grid-auto-rows:minmax(120px,230px);
-    grid-template-colums:repeat(4,2fr);
+    grid-template-colums:2fr 1fr 2fr 1fr;
     min-width: 250px;
-  	position: relative
-    
+  	position: relative;
+    */
     
   }
   
@@ -135,22 +140,22 @@ flex-direction:column;
 	
   .header{
   	display:flex;
-    grid-area: 1 / 1 / span 2 / span 4;
+    
   }
   
   .footer{
-    grid-area: 4 / 1 / span 1 / span 4;
+    
     display:flex;
   }
   
   .sidebar{
   display: flex;
-    grid-area: 2 / 1 / span 2 / span 1;
+    
   }
   
   .content{
   	display:flex;
-    grid-area: 2 / 2 / span 2 / span 3;
+    
     border: 2px solid blue;
   }
 
@@ -171,7 +176,7 @@ flex-direction:column;
 }
 
 .contentBox{
-	width: 250px;
+	width: 290px;
 	height:218px;
 	border: 1px solid green;
     column-gap: 2px;
@@ -197,11 +202,56 @@ flex-direction:column;
 	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 	background-repeat:none;
+    color: #0352fc;
 }
 
 #box3{
 	display: flex;
     align-self:flex-start;
+    grid-area: footer;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    color:#8003fc
+    /*grid-area:footer;*/
+}
+
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    grid-area:footer;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    
 	background-image: url('Fates_bg.jpg');
 	background-size:contain;
 	background-repeat:none;
@@ -260,6 +310,7 @@ flex-direction:column;
 	<div class="content box">
 		<div id=grid_content>
 		<div id=box1 class="contentBox">
+        <b><i>Box1</i></b>
 			 <p>Hjnij jkksum dolor sit amet, jjkoopijhhui adipiscing elit. 
 		nnijkk commodo ligula eget dolor. Aenean massa. 
 		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
@@ -267,7 +318,7 @@ flex-direction:column;
 		</div>
 		
 		<div id=box2 class="contentBox"> 
-		
+		<b><i>Box2</i></b>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
 		Aenean commodo ligula eget dolor. Aenean massa. 
 		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
@@ -276,25 +327,20 @@ flex-direction:column;
 		
         
         		<div id=box3 class="contentBox"> 
-		
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-		Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+		<b><i>Box3</i></b>
+		<p>sociis natoque penatibSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicttrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex us et magnis dis parturient montes, nascetur ridiculus mus. 
 		</p> 
        </div>
 		
         
               		<div id=box4 class="contentBox"> 
-		
-		<p>Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis  
-		Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+		<b><i>Box4</i></b>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ue penatibus et magnis Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
 		</p> 
        </div>
 	
                   		<div id=box5 class="contentBox"> 
-		
+		<b><i>Box5</i></b>
 		<p>Aenean commodo ligula eget dolor. Aenean massa. 
 		Cum sociis natoque penatibus et magnis  
 		Aenean commodo ligula eget dolor. Aenean massa. 
@@ -304,33 +350,24 @@ flex-direction:column;
 	
 
        
-                     		<div id=box4 class="contentBox"> 
-		
-		<p>Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis  
-		Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                     		<div id=box6 class="contentBox"> 
+		<b><i>Box6</i></b>
+		<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the
 		</p> 
        </div>
        
        
        
-                     		<div id=box4 class="contentBox"> 
-		
-		<p>Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis  
-		Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                     		<div id=box7 class="contentBox"> 
+		<b><i>Box7</i></b>
+		<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un 
 		</p> 
        </div>
        
        
-                            		<div id=box4 class="contentBox"> 
-		
-		<p>Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis  
-		Aenean commodo ligula eget dolor. Aenean massa. 
-		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                            		<div id=box8 class="contentBox"> 
+		<b><i>Box8</i></b>
+		<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and  
 		</p> 
        </div>
        
