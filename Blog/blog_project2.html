@@ -3,29 +3,463 @@
 <body>
 
 <head>
+<style>
 
-<link rel="stylesheet" type="text/css" href="basic_temp.css">
+body{
+	background-color:#019fcb;
+}
 
 
-  </head>
+@media(max-width:650px) {
+  
+  /* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+   "hd hd hd hd hd hd"
+"main main main main"
+"ft ft ft ft ft";
+    
+    column-gap:10px;
+    row-gap:8px;
+    
+    justify-items: start;
+	
+}
+
+.contentBox{
+	width: 162px;
+	height:150px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background:#d9ffb3;
+	
+}
+
+ 
+ #box1{
+	display: flex;
+    align-self:flex-start;
+    grid-area:1/1;
+	background-image: url("paris.jpg");
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+    grid-area: 1/ 2;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 2 / 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    jusifty: center;
+    /*grid-area:footer;*/
+}
+
+#box4{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 2/ 2;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3/ 2;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4 / 2;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+}
+
+/*End of medium media cond*/
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 400px){
+  
+  /* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+   "hd hd hd hd hd hd"
+    "main main main main"
+	"ft ft ft ft ft";
+    
+   
+    
+    justify-items: start;
+    
+	
+}
+
+.contentBox{
+	width: 162px;
+	height:150px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background:#d9ffb3;
+	
+}
+
+ 
+ #box1{
+	display: flex;
+    align-self:flex-start;
+    grid-area:1/1;
+	background-image: url("Brian_UFO.gif");
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+    grid-area: 2/ 1;
+	background-image: url("Brian_UFO.gif");
+	background-size:contain;
+	background-repeat:none;
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3 / 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    jusifty: center;
+    /*grid-area:footer;*/
+}
+
+#box4{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 5/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 6/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 7/ 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 8 / 1;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+}
+
+/*End of small media cond*/
+
+
+
+
+ .container{
+    
+    display:grid;
+   
+   /* border: 2px solid yellow;
+    grid-auto-rows:minmax(120px,230px);
+    grid-template-colums:2fr 1fr 2fr 1fr;
+    min-width: 250px;
+  	position: relative;
+    */
+    
+  }
+  
+  .box{
+    border: 1px solid #1D5174;
+    background: #02B3E4;
+    color:#8003fc
+    }
+	
+	
+	
+	
+  .header{
+  	display:flex;
+    color:black;
+    
+  }
+  
+  .footer{
+    
+    display:flex;
+    align-items: center;
+  justify-content: center;
+  }
+  
+  .sidebar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+    
+  }
+  
+  .content{
+  	display:flex;
+    
+    border: 2px solid blue;
+  }
+
+/* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+	
+    
+    column-gap:15px;
+    row-gap:8px;
+	
+}
+
+.contentBox{
+	width: 290px;
+	height:218px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background: #d1f1fa;
+	
+}
+
+
+
+#box1{
+	display: flex;
+    align-self:flex-start;
+	background-image: url("paris.jpg");
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+   
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    
+	background-image: url('Fates_bg.jpg');
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+/* button CSS*/
+
+.fa {
+  padding: 11px;
+  font-size: 13px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #00ffff;
+  color: black;
+}
+
+.fa-Sub {
+  background:  #0066ff;
+  color: white;
+}
+
+
+
+</style>
+</head>
 
   <body>
   <div class = "container">
-    <div class="header box">Header</div>
+    <div class="header box">
+    <h1>Blog Page</h1>
+    </div>
     
 	
-	<div class="sidebar box">Sidebar
+	<div class="sidebar box">
+    <h3>Sidebar</h3>
 	<ul>
-	<li> Thing 1</li>
-	<li> Thing 2</li>
-	<li> Thing 3</li>
-	<li> Thing 4</li>
+	<a href="#" class="fa fa-facebook"> Facebook</a>
+    
+	<a href="#" class="fa fa-twitter">Twitter</a>
+    
+    <a href="#" class="fa fa-Sub">Subscribe</a>
 	<ul>
 	</div>
     
 	<div class="content box">
 		<div id=grid_content>
 		<div id=box1 class="contentBox">
+        <b><i>Box1</i></b>
 			 <p>Hjnij jkksum dolor sit amet, jjkoopijhhui adipiscing elit. 
 		nnijkk commodo ligula eget dolor. Aenean massa. 
 		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
@@ -33,26 +467,87 @@
 		</div>
 		
 		<div id=box2 class="contentBox"> 
-		
+		<b><i>Box2</i></b>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
 		Aenean commodo ligula eget dolor. Aenean massa. 
 		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
 		</p> 
-		</div>
+       </div>
 		
-		<div id=box3 class="contentBox"> </div>
-		<div id=box4 class="contentBox"> </div>
+        
+        		<div id=box3 class="contentBox"> 
+		<b><i>Box3</i></b>
+		<p>sociis natoque penatibSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicttrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex us et magnis dis parturient montes, nascetur ridiculus mus. 
+		</p> 
+       </div>
+		
+        
+              		<div id=box4 class="contentBox"> 
+		<b><i>Box4</i></b>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ue penatibus et magnis Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+		</p> 
+       </div>
 	
+                  		<div id=box5 class="contentBox"> 
+		<b><i>Box5</i></b>
+		<p>Aenean commodo ligula eget dolor. Aenean massa. 
+		Cum sociis natoque penatibus et magnis  
+		Aenean commodo ligula eget dolor. Aenean massa. 
+		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+		</p> 
+       </div>
 	
+
+       
+                     		<div id=box6 class="contentBox"> 
+		<b><i>Box6</i></b>
+		<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the
+		</p> 
+       </div>
+       
+      
+       
+                     		<div id=box7 class="contentBox"> 
+		<b><i>Box7</i></b>
+		<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un 
+		</p> 
+       </div>
+       
+       
+                            		<div id=box8 class="contentBox"> 
+		<b><i>Box8</i></b>
+		<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and  
+		</p> 
+       </div>
+       
 	
 		</div>
+       
 	</div>
-	
-	
-	<div class="footer box">Footer
-	
-	<p>Copyright &copy; 2020  </p>
+    
+    
+    
+    	<div class="sidebar box">
+    <h3>Sidebar</h3>
+	<ul>
+	<a href="#" class="fa fa-facebook"> Back</a>
+    
+	<a href="#" class="fa fa-twitter">Home</a>
+    
+    <a href="#" class="fa fa-Sub">Next</a>
+	<ul>
 	</div>
+    
+    <div class="footer box">
+	
+	<h2>Footer
+    <p> Copyright &copy; 2020 </p> 
+    </h2>
+	</div>
+    
+	
+	
+	
   </div>
-  </body>
+</body>
 </html>
