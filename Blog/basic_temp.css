@@ -306,7 +306,7 @@ body{
     background: #d1f1fa;
 	background-image: url('bayo.png');
 	background-size:contain;
-	background-repeat:none;
+	background-repeat:no repeat;
 	
 }
 
