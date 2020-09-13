@@ -248,8 +248,8 @@ body{
   .box{
     border: 1px solid #1D5174;
     background: #02B3E4;
-	background-repeat:none;
-    color:#8003fc
+	background-repeat:no-repeat;
+    color:#8c1cfd;
     }
 	
 	
