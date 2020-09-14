@@ -6,6 +6,234 @@
 
 @import "./smallScreen.css" screen and (max-width: 400px);
 
+@media(max-width:650px) {
+  
+  /* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+   "hd hd hd hd hd hd"
+"main main main main"
+"ft ft ft ft ft";
+    
+    column-gap:10px;
+    row-gap:8px;
+    
+    justify-items: start;
+	
+}
+
+.contentBox{
+	width: 162px;
+	height:150px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background:#d9ffb3;
+	
+}
+
+ 
+ #box1{
+	display: flex;
+    align-self:flex-start;
+    grid-area:1/1;
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+    grid-area: 1/ 2;
+	background-size:contain;
+	background-repeat:none;
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 2 / 1;
+	background-size:contain;
+	background-repeat:none;
+    jusifty: center;
+    /*grid-area:footer;*/
+}
+
+#box4{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 2/ 2;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3/ 1;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3/ 2;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4/ 1;
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4 / 2;
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+}
+
+/*End of medium media cond*/
+
+
+
+
+
+@media only screen and (max-width: 400px){
+  
+  /* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+   "hd hd hd hd hd hd"
+    "main main main main"
+	"ft ft ft ft ft";
+    
+   
+    
+    justify-items: start;
+    
+	
+}
+
+.contentBox{
+	width: 162px;
+	height:150px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background:#d9ffb3;
+	
+}
+
+ 
+ #box1{
+	display: flex;
+    align-self:flex-start;
+    grid-area:1/1;
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+    grid-area: 2/ 1;
+	background-size:contain;
+	background-repeat:none;
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 3 / 1;
+	background-size:contain;
+	background-repeat:none;
+    jusifty: center;
+    /*grid-area:footer;*/
+}
+
+#box4{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 4/ 1;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 5/ 1;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 6/ 1;
+	background-size:contain;
+	background-repeat:none;
+    /*grid-area:footer;*/
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 7/ 1;
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    grid-area: 8 / 1;
+	background-size:contain;
+	background-repeat:none;
+    justify:left;
+    /*grid-area:footer;*/
+}
+
+}
+
+/*End of small media cond*/
+
+
+
+
+
+
+
 
 
 
