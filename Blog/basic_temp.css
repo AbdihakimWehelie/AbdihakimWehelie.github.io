@@ -286,6 +286,7 @@ body{
   
   
 .Home{
+	display:inline;
 	width: auto;
 	height:auto;
 	border: 1px solid blue;
@@ -294,7 +295,7 @@ body{
 	
 	background-size:contain;
 	
-	font-size:65px;
+	text-align: center;
 	align-items: center;
 	
 }
