@@ -1,7 +1,3 @@
-body{
-	background-color:#019fcb;
-}
-
 @import "gridContent.css";
 
 @import "button.css";
@@ -9,6 +5,16 @@ body{
 @import "midScreen.css" screen and (max-width: 650px);
 
 @import "smallScreen.css" screen and (max-width: 400px);
+
+
+
+
+
+body{
+	background-color:#019fcb;
+}
+
+
 
 
  .container{
