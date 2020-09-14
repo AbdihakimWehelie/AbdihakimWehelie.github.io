@@ -2,9 +2,7 @@
 
 @import "./button.css";
 
-@import "./midScreen.css" screen and (max-width: 650px);
 
-@import "./smallScreen.css" screen and (max-width: 400px);
 
 @media(max-width:650px) {
   
