@@ -286,7 +286,7 @@ body{
   
   
 .Home{
-	display:inline;
+	
 	width: auto;
 	height:auto;
 	border: 1px solid blue;
@@ -301,10 +301,6 @@ body{
 }
 
 
-#message(
-	text-align: center;
-	font-size:65px;
-)
 
   
   
