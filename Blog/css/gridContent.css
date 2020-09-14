@@ -1,0 +1,104 @@
+/* made for the nested content*/
+#grid_content{
+	display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+	
+    
+    column-gap:15px;
+    row-gap:8px;
+	
+}
+
+.contentBox{
+	width: 290px;
+	height:230px;
+	border: 1px solid green;
+    column-gap: 2px;
+    background: #d1f1fa;
+	background-image: url('../pics/582Vanillite_Dream.png');
+	background-size:contain;
+	background-repeat: no-repeat;
+	
+}
+
+
+
+#box1{
+	display: flex;
+    align-self:flex-start;
+	background-size:contain;
+	background-repeat:none;
+	
+}
+
+
+#box2{
+	display: flex;
+    align-self:baseline;
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box3{
+	display: flex;
+    align-self:flex-start;
+   
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+#box4{
+	display: flex;
+    align-self:flex-start;
+    
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+
+#box5{
+	display: flex;
+    align-self:flex-start;
+    
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+
+#box6{
+	display: flex;
+    align-self:flex-start;
+    
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box7{
+	display: flex;
+    align-self:flex-start;
+    
+	background-size:contain;
+	background-repeat:none;
+    
+}
+
+#box8{
+	display: flex;
+    align-self:flex-start;
+    
+	background-size:contain;
+	background-repeat:none;
+    
+}

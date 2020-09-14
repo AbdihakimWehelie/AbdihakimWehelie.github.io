@@ -1,0 +1,30 @@
+/* button CSS*/
+
+.fa {
+  padding: 11px;
+  font-size: 13px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #00ffff;
+  color: black;
+}
+
+.fa-Sub {
+  background:  #0066ff;
+  color: white;
+}
+
