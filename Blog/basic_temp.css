@@ -281,6 +281,26 @@ body{
     
     border: 2px solid blue;
   }
+  
+  
+  
+  
+div.Home{
+	width: auto;
+	height:auto;
+	border: 1px solid blue;
+    column-gap: 2px;
+    background: #d1f1fa;
+	
+	background-size:contain;
+	text-align: center;
+	font-size:65px;
+	align-items: center;
+	
+}
+
+  
+  
 
 /* made for the nested content*/
 #grid_content{
