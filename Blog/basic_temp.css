@@ -285,7 +285,7 @@ body{
   
   
   
-div.Home{
+.Home{
 	width: auto;
 	height:auto;
 	border: 1px solid blue;
@@ -293,11 +293,17 @@ div.Home{
     background: #d1f1fa;
 	
 	background-size:contain;
-	text-align: center;
+	
 	font-size:65px;
 	align-items: center;
 	
 }
+
+
+#message(
+	text-align: center;
+	font-size:65px;
+)
 
   
   
