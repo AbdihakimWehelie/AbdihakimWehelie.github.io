@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+
+<script>
+
+let go=document.querySelector('#divWater');
+
+
+function elements(element,scroll){
+
+
+
+var node=document.createElement("a");
+node.setAttribute('id', element);
+node.setAttribute("onclick", "window.smoothScroll(document.getElementById(go))");
+
+
+
+var textnode = document.createTextNode(element);
+  
+  var check=document.getElementById(element);
+  
+  if(!check)
+  {		
+  		node.appendChild(textnode);
+  		document.getElementById("myList").appendChild(node);
+  
+  }
+	
+
+}
+
+
+
+
+
+
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+    
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+    
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+
+
+
+function Remove(thing)
+{
+
+var div = document.querySelector(thing);
+console.log(div.parentNode !== null); //Attached, true
+div.parentNode.removeChild(div);
+console.log(div.parentNode !== null); //Not attached, false
+
+}
+
+
+
+function print(text)
+{
+	
+
+
+}
+</script>
+</head>
+<body>
+
+<h1>The nav element</h1>
+
+<p>The nav element defines a set of navigation links:</p>
+
+<nav id="myList">
+
+</nav>
+
+<p>Click the button to append an item to the end of the list.</p>
+
+<button onclick="elements('Water','divWater')">Try it</button>
+<br>
+<br>
+<div id="section" onclick="elements('Reggae','divReggae')">
+<p>Click the div to append an item to the end of the list.</p>
+</div>
+
+<button onclick="Remove('#Water')">Remove Water</button>
+<br>
+<br>
+<button onclick="Remove('#Reggae')">Remove Reggae</button>
+
+<button onclick="window.smoothScroll(document.getElementById('divReggae'))">Scroll to Reggae</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div id="divWater" style="color:blue;">
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+<div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div id="divReggae" style="color:green;"  onclick="elements('Reggae', this.id)">
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+<div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>End of pg</h3>
+
+
+
+</body>
+</html>
+
+
+
+
