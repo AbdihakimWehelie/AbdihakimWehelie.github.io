@@ -32,17 +32,29 @@ a:hover:not(.active) {
 
 <script>
 
-let go=document.querySelector('#divWater');
+let go=document.getElementById('divWater');
 
 
-function elements(element,scroll){
+function elements(element){
 
 
 
 var node=document.createElement("a");
 node.setAttribute('id', element);
-node.setAttribute("onclick", "window.smoothScroll(document.getElementById(go))");
 
+
+
+switch(element){
+
+	case "Water":
+    node.setAttribute("onclick", 	  "window.smoothScroll(document.getElementById('divWater'))");
+    break;
+
+
+	case "Reggae":
+	    node.setAttribute("onclick", 	  "window.smoothScroll(document.getElementById('divReggae'))");
+    break;
+}
 
 
 var textnode = document.createTextNode(element);
@@ -55,7 +67,9 @@ var textnode = document.createTextNode(element);
   		document.getElementById("myList").appendChild(node);
   
   }
-	
+
+
+
 
 }
 
@@ -122,10 +136,10 @@ function print(text)
 
 <p>Click the button to append an item to the end of the list.</p>
 
-<button onclick="elements('Water','divWater')">Try it</button>
+<button onclick="elements('Water')">Try it</button>
 <br>
 <br>
-<div id="section" onclick="elements('Reggae','divReggae')">
+<div id="section" onclick="elements('Reggae')">
 <p>Click the div to append an item to the end of the list.</p>
 </div>
 
