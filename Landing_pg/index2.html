@@ -85,7 +85,6 @@ function createNavLink(section) {
     aElem.setAttribute("href", link);
     aElem.setAttribute("class", `menu__link ${section.id}`);
 	aElem.setAttribute("class", `menu__link ${section.id}`);
-	
     aElem.textContent = name;
     li.appendChild(aElem);
     return li;
@@ -97,7 +96,6 @@ function buildNavMenu() {
   for (const section of sections) {
     const linkElement = createNavLink(section);
     nav.appendChild(linkElement);
-	nav..setAttribute("onclick", 	  "window.smoothScroll(document.getElementById(section))");
   }
 }
 
