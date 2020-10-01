@@ -66,6 +66,15 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
+ul{
+	padding-left: 0;
+    margin: 0;
+    text-align: right;
+	display: inline;
+	
+}
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
