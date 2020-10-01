@@ -13,6 +13,7 @@
 <body>
   <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <header class="page__header">
     <nav class="navbar__menu">
        Navigation starts as empty UL that will be populated with JS
@@ -147,6 +148,22 @@ document.addEventListener('scroll', function (e){
         showMenuDebounced();
     }, 3000);
   });
+  
+  
+  
+  function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 
 
