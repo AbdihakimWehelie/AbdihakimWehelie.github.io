@@ -78,7 +78,7 @@ const sections = document.querySelectorAll("section");
 
 
 function createNavLink(section) {
-    const li = document.createElement("li");
+    const li = document.createElement("ul");
     const aElem = document.createElement("a");
     const link = `#${section.id}`;
     const name = section.getAttribute("data-nav");
