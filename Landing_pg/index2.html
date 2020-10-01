@@ -125,6 +125,31 @@ document.addEventListener("scroll", function() {
   makeActive();
 });
 
+
+
+const debounce = (func, delay) => { 
+    let debounceTimer 
+    return function() { 
+        const context = this
+        const args = arguments 
+            clearTimeout(debounceTimer) 
+                debounceTimer 
+            = setTimeout(() => func.apply(context, args), delay) 
+    } 
+} 
+showMenuDebounced= debounce(() => {
+    const nav = document.getElementById('nav');
+    nav.style.display = 'block';
+} , 100);
+document.addEventListener('scroll', function (e){
+    nav.style.display = 'block';
+    setTimeout(function hideNav(){
+        showMenuDebounced();
+    }, 3000);
+  });
+
+
+
 window.smoothScroll = function(target) {
     var scrollContainer = target;
     do { //find scroll container
