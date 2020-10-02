@@ -1,79 +1,36 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Define Global Variables
- 
- * 
-*/
-const mybutton=document.getElementById("myBtn");
 const sections = document.querySelectorAll("section");
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
 
-function navLink(section){
-	
-	
-	const ul= document.createElement("ul");
-	const elemt=document.createElement("a");
-	const links= `#${section.id}`;
-	const navName= section.getAttribute("data-nav");
-	
-	
-	elemt.setAttribute("href", links);
-    elemt.setAttribute("class", `menu__link ${section.id}`);
-	elemt.setAttribute("class", `menu__link ${section.id}`);
-    elemt.textContent = navName;
-	
-	
-	ul.appendChild(elemt);
-	
-	return ul;
-	
+function createNavLink(section) {
+    const li = document.createElement("ul");
+    const aElem = document.createElement("a");
+    const link = `#${section.id}`;
+    const name = section.getAttribute("data-nav");
+    aElem.setAttribute("href", link);
+    aElem.setAttribute("class", `menu__link ${section.id}`);
+	aElem.setAttribute("class", `menu__link ${section.id}`);
+    aElem.textContent = name;
+    li.appendChild(aElem);
+    return li;
 }
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
 // build the nav
 
-function buildNav(){
-	
-	const navbar= document.getElementById("navbar__list");
-	
-	for(const section of sections){
-		const linkElement = createNavLink(section);
-    navbar.appendChild(linkElement);
-	}
-	
+function buildNavMenu() {
+  const nav = document.getElementById("navbar__list");
+  for (const section of sections) {
+    const linkElement = createNavLink(section);
+    nav.appendChild(linkElement);
+  }
 }
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  //Build navigation menu when the DOM is ready
+  buildNavMenu();
+}
+)
 
-
-// Add class 'active' to section when near top of viewport
 
 function makeActive() {
   for (const section of sections) {
@@ -88,10 +45,39 @@ function makeActive() {
 }
 
 
+document.addEventListener("scroll", function() {
+  makeActive();
+});
 
 
-// Scroll to anchor ID using scrollTO event
 
+const debounce = (func, delay) => { 
+    let debounceTimer 
+    return function() { 
+        const context = this
+        const args = arguments 
+            clearTimeout(debounceTimer) 
+                debounceTimer 
+            = setTimeout(() => func.apply(context, args), delay) 
+    } 
+} 
+showMenuDebounced= debounce(() => {
+    const nav = document.getElementById('nav');
+    nav.style.display = 'block';
+} , 100);
+document.addEventListener('scroll', function (e){
+    nav.style.display = 'block';
+    setTimeout(function hideNav(){
+        showMenuDebounced();
+    }, 3000);
+  });
+  
+  
+  
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -108,20 +94,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-document.addEventListener("DOMContentLoaded", function(){
-	
-	buildNav();
-}
-)
 
 
 window.smoothScroll = function(target) {
@@ -147,10 +119,3 @@ window.smoothScroll = function(target) {
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
-
-
-
-
-// Scroll to section on link click
-
-// Set sections as active
