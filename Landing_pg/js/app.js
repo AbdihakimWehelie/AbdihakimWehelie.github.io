@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 )
 
-/*
+
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
@@ -50,25 +50,13 @@ document.addEventListener("scroll", function() {
   makeActive();
 });
 
-*/
-
-const room  = document.querySelector('.navbar__menu');
-const btns = document.querySelectorAll('ul'); 
-
-room.addEventListener('click', e => {
-
- btns.forEach(btn => {
-
-    if(btn.getAttribute('id') === e.target.getAttribute('id'))
-      btn.classList.add('active');
-    else
-      btn.classList.remove('active');
-    });
-});
 
 
 
 
+
+
+/*
 
 const debounce = (func, delay) => { 
     let debounceTimer 
@@ -90,7 +78,7 @@ document.addEventListener('scroll', function (e){
         showMenuDebounced();
     }, 3000);
   });
-  
+*/  
   
   
 //Get the button
