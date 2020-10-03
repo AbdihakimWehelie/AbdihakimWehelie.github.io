@@ -1,24 +1,24 @@
 const sections = document.querySelectorAll("section");
 
 
-function createNavLink(section) {
-    const li = document.createElement("ul");
-    const aElem = document.createElement("a");
-    const link = `#${section.id}`;
-    const name = section.getAttribute("data-nav");
-    aElem.setAttribute("href", link);
-    aElem.setAttribute("class", `menu__link ${section.id}`);
-	aElem.setAttribute("class", `menu__link ${section.id}`);
-    aElem.textContent = name;
-    li.appendChild(aElem);
-    return li;
+function makeNavLinks(section) {
+    const ul = document.createElement("ul");
+    const Elemnt = document.createElement("a");
+    const NavLink = `#${section.id}`;
+    const NavName = section.getAttribute("data-nav");
+    Elemnt.setAttribute("href", NavLink);
+    Elemnt.setAttribute("class", `menu__link ${section.id}`);
+	Elemnt.setAttribute("class", `menu__link ${section.id}`);
+    Elemnt.textContent = NavName;
+    ul.appendChild(Elemnt);
+    return ul;
 }
 // build the nav
 
-function buildNavMenu() {
+function createMenu() {
   const nav = document.getElementById("navbar__list");
   for (const section of sections) {
-    const linkElement = createNavLink(section);
+    const linkElement = makeNavLinks(section);
     nav.appendChild(linkElement);
   }
 }
@@ -27,17 +27,18 @@ function buildNavMenu() {
 
 document.addEventListener("DOMContentLoaded", function() {
   //Build navigation menu when the DOM is ready
-  buildNavMenu();
+  createMenu();
 }
 )
 
-
+/*
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
     // You can play with the values in the "if" condition to further make it more accurate. 
     if (box.top <= 150 && box.bottom >= 150) {
       // Apply active state on the current section and the corresponding Nav link.
+	  var current = document.getElementsByClassName("active");
     } else {
       // Remove active state from other section and corresponding Nav link.
     }
@@ -48,6 +49,24 @@ function makeActive() {
 document.addEventListener("scroll", function() {
   makeActive();
 });
+
+*/
+
+const room  = document.querySelector('.navbar__menu');
+const btns = document.querySelectorAll('ul'); 
+
+room.addEventListener('click', e => {
+
+ btns.forEach(btn => {
+
+    if(btn.getAttribute('id') === e.target.getAttribute('id'))
+      btn.classList.add('active');
+    else
+      btn.classList.remove('active');
+    });
+});
+
+
 
 
 
@@ -75,7 +94,7 @@ document.addEventListener('scroll', function (e){
   
   
 //Get the button
-var mybutton = document.getElementById("myBtn");
+const mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
