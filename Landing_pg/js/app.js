@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 )
 
-
+/*
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
@@ -52,7 +52,7 @@ document.addEventListener("scroll", function() {
   makeActive();
 });
 
-
+*/
 
 
 
