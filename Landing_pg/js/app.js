@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 )
 
-/*
+
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
@@ -51,17 +51,8 @@ function makeActive() {
 document.addEventListener("scroll", function() {
   makeActive();
 });
-*/
 
-$(document).ready(function () {
-        $('a').click(function () {
-            //removing the previous selected menu state
-            $('.navbar__list').find('ul.active').removeClass('active');
-            //adding the state for this parent menu
-            $(this).parents("ul").addClass('active');
 
-        });
-    });
 
 
 
