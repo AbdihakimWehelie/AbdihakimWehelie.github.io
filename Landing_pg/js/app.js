@@ -1,6 +1,7 @@
+//stores the class data of each section in the div
 const sections = document.querySelectorAll("section");
 
-
+// creates the sections to be added to the nav, including links to their divs
 function makeNavLinks(section) {
     const ul = document.createElement("ul");
     const Elemnt = document.createElement("a");
@@ -13,8 +14,9 @@ function makeNavLinks(section) {
     ul.appendChild(Elemnt);
     return ul;
 }
-// build the nav
 
+
+// gets the information of the navbar and appendChild() using the infomation stored in the sections variable 
 function createMenu() {
   const nav = document.getElementById("navbar__list");
   for (const section of sections) {
@@ -26,41 +28,11 @@ function createMenu() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  //Build navigation menu when the DOM is ready
+  //When the DOM is loaded, call the function to build the nav
   createMenu();
 }
 )
 
-/*
-function makeActive() {
-  for (const section of sections) {
-    const box = section.getBoundingClientRect();
-    // You can play with the values in the "if" condition to further make it more accurate. 
-    if (box.top <= 150 && box.bottom >= 150) {
-      // Apply active state on the current section and the corresponding Nav link.
-	   box.classList.add('active');
-	  var current = document.getElementsByClassName("active");
-    } else {
-      // Remove active state from other section and corresponding Nav link.
-	   box.classList.remove('active');
-    }
-  }
-}
-
-
-document.addEventListener("scroll", function() {
-  makeActive();
-});
-
-*/
-
-
-
-
-
- 
-  
-  
 //Get the button
 const mybutton = document.getElementById("myBtn");
 
@@ -80,8 +52,3 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
-
-
-
