@@ -65,7 +65,7 @@ const navbarMenu = document.getElementById('navbar__list');
     //get id for list
     list.id = section.id;
     //add class to section
-    list.className.add('menu__link');    
+    list.classList.add('menu__link');    
     //get content of section
     list.innerText = section.dataset.nav;
     //creating nav bar
