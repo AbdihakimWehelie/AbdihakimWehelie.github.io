@@ -57,20 +57,7 @@ const navbarMenu = document.getElementById('navbar__list');
 //select sections
 
 
-  //build a nav
-  //this loop iterates through sections
-  for (section of sections){
-    //create li  
-    let list = document.createElement('li');
-    //get id for list
-    list.id = section.id;
-    //add class to section
-    list.classList.add('menu__link');    
-    //get content of section
-    list.innerText = section.dataset.nav;
-    //creating nav bar
-    navbarMenu.appendChild(list);
-  }  
+
 // make section active
 function makeActive(){
   for (section of sections) {
