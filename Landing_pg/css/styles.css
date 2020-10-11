@@ -109,6 +109,12 @@ ul{
     display: inline-block;
 }
 
+
+.navbar__menu li ul a.active{
+  background: #ddd;
+  color: black;
+}
+
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
@@ -284,10 +290,7 @@ section.your-active-class .landing__container::after {
 }
 
 
-.navbar > .active > a {
-  background: #ddd;
-  color: black;
-}
+
 
 
 .main {
