@@ -110,10 +110,6 @@ ul{
 }
 
 
-.navbar__menu li ul a.active{
-  background: #ddd;
-  color: black;
-}
 
 .navbar__menu .menu__link {
     display: block;

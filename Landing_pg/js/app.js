@@ -58,24 +58,35 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-// make section active
-function makeActive(){
-  for (section of sections) {
-    const box = section.getBoundingClientRect();
-    if(box.top <= 150 && box.bottom >= 150){
-      const nav_item = document.querySelector('.navbar__menu');
-      nav_item.classList.add('your-active-class');
-      nav_item.classList.add('active');
-    }else{
-      const nav_item = document.querySelector('.menu__link');
-      nav_item.classList.remove('your-active-class');
-      nav_item.classList.remove('active');
-    }
-  }
-}
+function activeSection() {
+    activesection = sections[0];
+    min = 10000;
+    for (section of sections) {
+        let boundries = section.getBoundingClientRect();
+        if (boundries.top > -300 & boundries.top < min) {
+            min = boundries.top;
+            activesection = section;
+        };
+    };
+    return activesection;
+};
 
-document.addEventListener('scroll', function(){
-  makeActive()
-});
-
+function activation () {
+    window.addEventListener('scroll', function (event) {
+        let section = activeSection();
+        const active = document.querySelector('li[data-nav="' + section.id + '"]');
+        active.classList.add('active__link');
+        const menuHeaders = document.querySelectorAll('.menu__link');
+        section.classList.add('your-active-class');
+        for (let i of sections) {
+            i.id != section.id & i.classList.contains('your-active-class') ? i.classList.remove('your-active-class') :i.classList.add('your-active-class');
+        }
+        for (let i of menuHeaders) {
+            if(i.dataset.nav != active.dataset.nav & i.classList.contains('active__link')){
+                i.classList.remove('active__link') ;
+            } 
+            i.dataset.nav != active.dataset.nav & i.classList.contains('active__link') ? i.classList.remove('active__link') : undefined;
+        };
+    });
+};
 
