@@ -289,7 +289,10 @@ section.your-active-class .landing__container::after {
   color: black;
 }
 
-
+.navbar a:active {
+  background: #ddd;
+  color: black;
+}
 
 
 
