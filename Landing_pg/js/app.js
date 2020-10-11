@@ -58,7 +58,7 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-// Add class 'active' to section when near top of viewport
+/* Add class 'active' to section when near top of viewport
 function activateNavLinks(id) {
 	const allNavLists = document.querySelectorAll(".navbar__link")
 	allNavLists.forEach((navLink) => {
@@ -84,5 +84,29 @@ function activeClassAssign() {
 			}
 		})
 	);
+}*/
+
+const topMenu = document.getElementById('navbar__list');
+
+const navItems = document.getElementsByClassName("menu__link");
+
+function sectionActive () {
+    for (const section of sections) {
+        const boxPlace = section.getBoundingClientRect();
+        if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
+            const id = section.getAttribute("id");
+            document.querySelector(`.${id}`).classList.add("active");
+            section.classList.add("your-active-class");
+        } else {
+            const id = section.getAttribute("id");
+            document.querySelector(`.${id}`).classList.remove("active");
+            section.classList.remove("your-active-class");
+            
+            
+        }
+    }
 }
+
+
+
 
