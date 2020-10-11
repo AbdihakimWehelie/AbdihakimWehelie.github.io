@@ -10,6 +10,7 @@ function makeNavLinks(section) {
     Elemnt.setAttribute("href", NavLink);
     Elemnt.setAttribute("class", `menu__link ${section.id}`);
 	Elemnt.setAttribute("class", `menu__link ${section.id}`);
+	Elemnt.setAttribute("class", `your-active-class`);
     Elemnt.textContent = NavName;
     ul.appendChild(Elemnt);
     return ul;
