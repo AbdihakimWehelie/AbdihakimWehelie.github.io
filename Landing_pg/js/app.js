@@ -58,35 +58,31 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-function activeSection() {
-    activesection = sections[0];
-    min = 10000;
-    for (section of sections) {
-        let boundries = section.getBoundingClientRect();
-        if (boundries.top > -300 & boundries.top < min) {
-            min = boundries.top;
-            activesection = section;
-        };
-    };
-    return activesection;
-};
-
-function activation () {
-    window.addEventListener('scroll', function (event) {
-        let section = activeSection();
-        const active = document.querySelector('li[data-nav="' + section.id + '"]');
-        active.classList.add('active__link');
-        const menuHeaders = document.querySelectorAll('.menu__link');
-        section.classList.add('your-active-class');
-        for (let i of sections) {
-            i.id != section.id & i.classList.contains('your-active-class') ? i.classList.remove('your-active-class') :i.classList.add('your-active-class');
-        }
-        for (let i of menuHeaders) {
-            if(i.dataset.nav != active.dataset.nav & i.classList.contains('active__link')){
-                i.classList.remove('active__link') ;
-            } 
-            i.dataset.nav != active.dataset.nav & i.classList.contains('active__link') ? i.classList.remove('active__link') : undefined;
-        };
-    });
-};
+// Add class 'active' to section when near top of viewport
+function activateNavLinks(id) {
+	const allNavLists = document.querySelectorAll(".navbar__link")
+	allNavLists.forEach((navLink) => {
+		if (navLink.childNodes[0].id.substring(1) === id) {
+			console.log(true)
+				navLink.childNodes[0].classList.add("demo-class");
+			} else {
+				console.log(false)
+				navLink.childNodes[0].classList.remove("demo-class");
+			}
+		}
+	)
+}
+function activeClassAssign() {
+	sections.forEach((section) =>
+		window.addEventListener("scroll", function(){
+			if (section.getBoundingClientRect().top + 200 < window.innerHeight &&
+				section.getBoundingClientRect().bottom + 200 > window.innerHeight) {
+				section.classList.add("your-active-class");
+				activateNavLinks(section.id);
+			} else {
+				section.classList.remove("your-active-class");
+			}
+		})
+	);
+}
 
