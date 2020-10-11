@@ -259,6 +259,10 @@ section.your-active-class .landing__container::after {
 	}
 }
 
+.menu__link.active {
+    background: #333;
+    color: #fff;
+}
 
 
 /*navbar css*/
