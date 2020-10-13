@@ -86,6 +86,8 @@ function activeClassAssign() {
 	);
 }*/
 
+
+/*
 const topMenu = document.getElementById('navbar__list');
 
 const navItems = document.getElementsByClassName("menu__link");
@@ -112,5 +114,12 @@ document.addEventListener("DOMContentLoaded", function() {
   sectionActive();
 }
 )
+*/
 
+    $(function() {
+        $('#nav li a ul').click(function() {
+           $('#nav li').removeClass();
+           $($(this).attr('href')).addClass('active');
+        });
+     });
 
