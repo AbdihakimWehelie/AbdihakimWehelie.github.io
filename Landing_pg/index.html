@@ -72,6 +72,13 @@
     <p>&copy Udacity</p>
   </footer>
 	<script src="js/app.js"></script>
-	
+	<script>
+	  $(function() {
+        $('#nav li a ul').click(function() {
+           $('#nav li').removeClass();
+           $($(this).attr('href')).addClass('active');
+        });
+     });
+	</script>
 </body>
 </html>
