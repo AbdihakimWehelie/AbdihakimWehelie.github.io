@@ -107,6 +107,10 @@ function sectionActive () {
     }
 }
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  //When the DOM is loaded, call the function to build the nav
+  sectionActive();
+}
+)
 
 
