@@ -116,10 +116,5 @@ document.addEventListener("DOMContentLoaded", function() {
 )
 */
 
-    $(function() {
-        $('#nav li a ul').click(function() {
-           $('#nav li').removeClass();
-           $($(this).attr('href')).addClass('active');
-        });
-     });
+  
 
