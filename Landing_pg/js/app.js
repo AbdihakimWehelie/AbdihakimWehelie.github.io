@@ -58,7 +58,7 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-/* Add class 'active' to section when near top of viewport
+/* Add class 'active' to section when near top of viewport*/
 function activateNavLinks(id) {
 	const allNavLists = document.querySelectorAll(".navbar__link")
 	allNavLists.forEach((navLink) => {
@@ -84,7 +84,7 @@ function activeClassAssign() {
 			}
 		})
 	);
-}*/
+}
 
 
 /*
