@@ -58,33 +58,55 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-/* Add class 'active' to section when near top of viewport*/
-function activateNavLinks(id) {
-	const allNavLists = document.querySelectorAll(".navbar__link")
-	allNavLists.forEach((navLink) => {
-		if (navLink.childNodes[0].id.substring(1) === id) {
-			console.log(true)
-				navLink.childNodes[0].classList.add("demo-class");
-			} else {
-				console.log(false)
-				navLink.childNodes[0].classList.remove("demo-class");
-			}
-		}
-	)
-}
-function activeClassAssign() {
-	sections.forEach((section) =>
-		window.addEventListener("scroll", function(){
-			if (section.getBoundingClientRect().top + 200 < window.innerHeight &&
-				section.getBoundingClientRect().bottom + 200 > window.innerHeight) {
-				section.classList.add("your-active-class");
-				activateNavLinks(section.id);
-			} else {
-				section.classList.remove("your-active-class");
-			}
-		})
-	);
-}
+function sectionActive(){
+
+    const scrollHeight = window.pageYOffset;
+    const innerHeight = window.innerHeight;
+
+
+    for(let i = 1; i <= sections.length; i++){
+
+        let section = document.getElementById(`section${i}`);
+        const listId = document.getElementById(`secLi_${i}`);
+        const secTop = section.getBoundingClientRect().top;
+        const secBot = section.getBoundingClientRect().bottom;
+        // console.log(secTop);
+        // console.log(secBot);
+        // console.log(section.offsetHeight);
+
+        // if ( (section.offsetHeight * i) <= scrollHeight <= (section.offsetHeight * (i+1))
+        // && (0 <= secTop <= section.offsetHeight)
+        // && (secBot <= section.offsetHeight)
+        // )
+        if(secTop < innerHeight/3 && secBot > innerHeight/3)  
+        {
+            listId.classList.add('active');
+        }
+        else{
+            listId.classList.remove('active');
+        }
+    }
+
+    console.log(innerHeight);
+
+    //for the back to top button
+    const sec = document.getElementById('section1');
+    if (scrollHeight > sec.offsetHeight){
+        topBtn.classList.add('show-link');
+    }
+    else{
+        topBtn.classList.remove('show-link');
+    }
+
+   
+     
+};
+
+
+
+window.addEventListener('scroll', function(){
+    sectionActive();
+});
 
 
 /*
