@@ -264,6 +264,11 @@ section.your-active-class .landing__container::after {
     color: #fff;
 }
 
+.active {
+    background: #333;
+    color: #fff;
+}
+
 
 /*navbar css*/
 .navbar {

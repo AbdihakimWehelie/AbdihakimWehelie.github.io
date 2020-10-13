@@ -109,6 +109,26 @@ window.addEventListener('scroll', function(){
 });
 
 
+function scroll(){
+    for (let i = 1; i <= sections.length; i++){
+        let section = document.getElementById(`section${i}`);
+        const listId = document.getElementById(`secLi_${i}`);
+        listId.addEventListener('click', function(){
+            section.scrollIntoView({behavior: "smooth"})
+        });
+    }
+};
+
+scroll();
+
+
+//scroll to top smoothly
+
+topBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({top:0, behavior: "smooth"});
+});
+
 /*
 const topMenu = document.getElementById('navbar__list');
 
