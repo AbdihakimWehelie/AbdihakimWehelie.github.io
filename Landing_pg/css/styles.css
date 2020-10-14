@@ -11,6 +11,51 @@ html {
     scroll-behavior: smooth;
 }
 
+
+@media only screen and (max-width: 450px){
+	
+	
+/*navbar css*/
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 8px;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar a:active {
+  background: #ddd;
+  color: black;
+}
+
+
+
+.main {
+  padding: 8px;
+  margin-top: 20px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+	
+	
+}
+
+
 /* ---- Base Rules ---- */
 body {
     background: rgb(136,203,171);
