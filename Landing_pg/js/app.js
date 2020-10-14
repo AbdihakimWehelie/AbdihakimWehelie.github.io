@@ -58,105 +58,34 @@ const navbarMenu = document.getElementById('navbar__list');
 
 
 
-function sectionActive(){
+function isSectionActive(){
+	
 
-    const scrollHeight = window.pageYOffset;
-    const innerHeight = window.innerHeight;
+		
+		
+	for(const section of sections)
+	{
+		
+			const position= section.getBoundingClientRect();
+	
+				if (position.top <= 150 && position.bottom >= 150) {
+				const id = section.getAttribute("id");   
+				document.querySelector(`.${id}`).classList.add("active");
+				section.classList.add("your-active-class");
+			} 
+			else {
+				const id = section.getAttribute("id");  
+				document.querySelector(`.${id}`).classList.remove("active");
+			section.classList.remove("your-active-class");
+	}
 
-
-    for(let i = 1; i <= sections.length; i++){
-
-        let section = document.getElementById(`section${i}`);
-        const listId = document.getElementById(`secLi_${i}`);
-        const secTop = section.getBoundingClientRect().top;
-        const secBot = section.getBoundingClientRect().bottom;
-        // console.log(secTop);
-        // console.log(secBot);
-        // console.log(section.offsetHeight);
-
-        // if ( (section.offsetHeight * i) <= scrollHeight <= (section.offsetHeight * (i+1))
-        // && (0 <= secTop <= section.offsetHeight)
-        // && (secBot <= section.offsetHeight)
-        // )
-        if(secTop < innerHeight/3 && secBot > innerHeight/3)  
-        {
-            listId.classList.add('active');
-        }
-        else{
-            listId.classList.remove('active');
-        }
-    }
-
-    console.log(innerHeight);
-
-    //for the back to top button
-    const sec = document.getElementById('section1');
-    if (scrollHeight > sec.offsetHeight){
-        topBtn.classList.add('show-link');
-    }
-    else{
-        topBtn.classList.remove('show-link');
-    }
-
-   
-     
-};
-
-
-
-window.addEventListener('scroll', function(){
-    sectionActive();
-});
-
-
-function scroll(){
-    for (let i = 1; i <= sections.length; i++){
-        let section = document.getElementById(`section${i}`);
-        const listId = document.getElementById(`secLi_${i}`);
-        listId.addEventListener('click', function(){
-            section.scrollIntoView({behavior: "smooth"})
-        });
-    }
-};
-
-scroll();
-
-
-//scroll to top smoothly
-
-topBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    window.scrollTo({top:0, behavior: "smooth"});
-});
-
-/*
-const topMenu = document.getElementById('navbar__list');
-
-const navItems = document.getElementsByClassName("menu__link");
-
-function sectionActive () {
-    for (const section of sections) {
-        const boxPlace = section.getBoundingClientRect();
-        if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
-            const id = section.getAttribute("id");
-            document.querySelector(`.${id}`).classList.add("active");
-            section.classList.add("your-active-class");
-        } else {
-            const id = section.getAttribute("id");
-            document.querySelector(`.${id}`).classList.remove("active");
-            section.classList.remove("your-active-class");
-            
-            
-        }
-    }
+		
+		
+		
+	}
+	
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  //When the DOM is loaded, call the function to build the nav
-  sectionActive();
-}
-)
-*/
-
   
-
+document.addEventListener('scroll', function () {
+    isSectionActive();
+});
