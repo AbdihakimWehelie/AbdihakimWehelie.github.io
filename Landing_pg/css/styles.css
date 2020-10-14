@@ -9,48 +9,49 @@
 */
 
 
-@media only screen and (max-width: 450px){
-	
-	
-/*navbar css*/
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
+@media only screen and (max-width: 479px) {
+  body {
+    padding: 0%;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'sec1'
+      'sec2'
+      'sec3'
+      'sec4';
+  }
+  .navbar__menu {
+    display: inline-flexbox;
+    background-color: red;
+    margin: 0%;
+    padding: 0%;
+  }
+  .navbar__list {
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+  }
+  li {
+    display: flexbox;
+    padding: 0%;
+    margin: 0%;
+    padding-left: 0.7%;
+    width: 25%;
+    font-size: 90%;
+  }
+  li a {
+    padding: 0%;
+    margin: 0%;
+    display: flexbox;
+    background-color: #D2B48C;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+  }
+  
 }
 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 7px 8px;
-  text-decoration: none;
-  font-size: 11px;
-}
-
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
-
-.navbar a:active {
-  background: #ddd;
-  color: black;
-}
-
-
-
-.main {
-  padding: 8px;
-  margin-top: 20px;
-  height: 1500px; /* Used in this example to enable scrolling */
-}
-	
-	
-}
 
 
 
