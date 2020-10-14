@@ -7,9 +7,6 @@
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
 */
-html {
-    scroll-behavior: smooth;
-}
 
 
 @media only screen and (max-width: 450px){
@@ -54,6 +51,14 @@ html {
 	
 	
 }
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 
 
 /* ---- Base Rules ---- */
