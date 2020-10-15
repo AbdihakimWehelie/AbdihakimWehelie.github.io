@@ -29,7 +29,7 @@
 	  background-size: cover;
     padding: 0%;
     margin: 0%;
-    width: 100%;
+    width: 50%;
   }
   li {
     display: flexbox;
@@ -46,7 +46,7 @@
     background-color: #D2B48C;
     text-decoration: none;
     color: white;
-    width: 100%;
+    width: 50%;
   }
   
   
@@ -56,7 +56,7 @@
   background-color: #333;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 50%;
 }
 
 .navbar a {
@@ -128,7 +128,7 @@ h1 {
     margin: 2em 1rem;
 }
 
-@media only screen and (min-width: 35em){
+@media only screen and (min-width: 470px){
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
