@@ -80,6 +80,23 @@
 }
 
 
+navbar__menu .menu__link {
+    display: block;
+	background-size: cover;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar__menu .menu__link:hover {
+    background: #333;
+	background-size: cover;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+
   
   
 }
