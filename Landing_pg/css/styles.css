@@ -9,7 +9,7 @@
 */
 
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 470px) {
   body {
     padding: 0%;
   }
@@ -22,10 +22,9 @@
   }
   .navbar__menu {
     display: inline-flexbox;
-	flex-basis: 25%; 
-	flex-wrap: wrap;
 	background-size: contain;
-    background-color: cyan;
+    background-color: pink;
+	justify-content:row;
     color: purple;
     margin: 0%;
     padding: 0%;
@@ -121,6 +120,7 @@ ul{
 	display: inline-block;
 	background-size: cover;
 	color:green;
+	width:80%;
 	
 }
 
