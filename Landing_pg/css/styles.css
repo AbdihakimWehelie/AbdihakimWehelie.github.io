@@ -25,8 +25,8 @@
 	background-size: contain;
     background-color: yellow;
     color: purple;
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
 	width:50%
 	
   }
@@ -34,22 +34,22 @@
 	  background-size: cover;
 	  display: flex;
 	  flex-wrap: nowrap;
-    padding: 0;
-    margin: 0;
+    padding: 0%;
+    margin: 0%;
     width: 50%;
   }
   li {
     display: flexbox;
 	flex-wrap: nowrap;
-    padding: 0;
-    margin: 0;
-    padding-left: 0.2%;
+    padding: 0%;
+    margin: 0%;
+    padding-left: 0.7%;
     width: 25%;
     font-size: 90%;
   }
   li a {
-    padding: 0;
-    margin: 0;
+    padding: 0%;
+    margin: 0%;
     display: flexbox;
     background-color: #D2B48C;
     text-decoration: none;
@@ -91,7 +91,7 @@
 navbar__menu .menu__link {
     display: block;
 	background-size: cover;
-    padding: 0.2em;
+    padding: 1em;
     font-weight: bold;
     text-decoration: none;
     color: #000;
