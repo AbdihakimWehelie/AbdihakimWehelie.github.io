@@ -19,7 +19,7 @@
     
   }
   .navbar__menu {
-    display: inline-flexbox;
+    display: grid;
 	background-size: contain;
     background-color: yellow;
     color: purple;
