@@ -22,12 +22,12 @@
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: #20fc03;
+    background-color: #03cefc;
 	justify-content:row;/*change to column*/
     color: purple;
     margin: 0%;
     padding: 0%;
-	width:50%;
+	
 	
   }
   .navbar__list {
