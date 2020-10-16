@@ -22,7 +22,7 @@
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: purple;
+    background-color: #c203fc;
 	justify-content:column;/*change to column*/
     color: purple;
     margin: 0%;
