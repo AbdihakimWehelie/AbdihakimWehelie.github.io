@@ -16,10 +16,11 @@
   .grid-container {
     display: grid;
 	background-size: cover;
+	grid-template-columns: auto auto auto;
     
   }
   .navbar__menu {
-    display: grid;
+    display: inline-flexbox;
 	background-size: contain;
     background-color: yellow;
     color: purple;
