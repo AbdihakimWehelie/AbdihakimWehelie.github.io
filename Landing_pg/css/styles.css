@@ -15,7 +15,8 @@
   }
   .grid-container {
     display: flex;
-	flex-direction:row;
+	flex-basis: 50%; 
+	flex-wrap: wrap;
 	background-size: cover;
     
   }
