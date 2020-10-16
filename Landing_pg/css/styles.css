@@ -30,6 +30,8 @@
   }
   .navbar__list {
 	  background-size: cover;
+	  display: flex;
+	  color: purple;
     padding: 0%;
     margin: 0%;
     width: 50%;
