@@ -29,14 +29,11 @@
 	color: green;
   }
   .navbar__list {
-	background-size: contain;
-	display: flex;
-	color: purple;
+	  background-size: cover;
     padding: 0%;
     margin: 0%;
     width: 50%;
   }
-  
   li {
     display: flexbox;
     padding: 0%;
@@ -108,8 +105,7 @@ ul{
     margin: 0;
     text-align: right;
 	display: inline;
-	color:blue;
-	
+	color:green;
 	
 }
 
