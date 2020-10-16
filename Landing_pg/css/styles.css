@@ -14,14 +14,15 @@
     padding: 0%;
   }
   .grid-container {
-    display: grid;
+    display: flex;
 	background-size: cover;
     
   }
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: red;
+    background-color: yellow;
+    color: purple;
     margin: 0%;
     padding: 0%;
 	width:50%
