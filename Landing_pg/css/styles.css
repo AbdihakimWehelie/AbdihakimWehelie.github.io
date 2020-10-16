@@ -23,12 +23,12 @@
     display: inline-flexbox;
 	flex-wrap: nowrap;
 	background-size: contain;
-    background-color: yellow;
+    background-color: blue;
     color: purple;
     margin: 0%;
     padding: 0%;
 	width:50%
-	
+	color: green;
   }
   .navbar__list {
 	  background-size: cover;
