@@ -26,7 +26,7 @@
     margin: 0%;
     padding: 0%;
 	width:50%
-	color: green;
+	
   }
   .navbar__list {
 	  background-size: cover;
@@ -35,23 +35,7 @@
     margin: 0%;
     width: 50%;
   }
-  li {
-    display: flexbox;
-    padding: 0%;
-    margin: 0%;
-    padding-left: 0.7%;
-    width: 25%;
-    font-size: 90%;
-  }
-  li a {
-    padding: 0%;
-    margin: 0%;
-    display: flexbox;
-    background-color: #D2B48C;
-    text-decoration: none;
-    color: white;
-    width: 50%;
-  }
+  
   
   
   /*navbar css*/
