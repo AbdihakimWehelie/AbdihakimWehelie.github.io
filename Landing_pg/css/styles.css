@@ -14,7 +14,7 @@
     padding: 0%;
   }
   .grid-container {
-    display: flex;
+    display: grid;
 	background-size: cover;
     
   }
@@ -90,15 +90,15 @@ navbar__menu .menu__link {
     display: block;
 	background-size: cover;
     padding: 1em;
-    font-weight: bold;
+    font-weight: italic;
     text-decoration: none;
     color: #000;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: #222;
 	background-size: cover;
-    color: #fff;
+    color: #eee;
     transition: ease 0.3s all;
 }
 
@@ -109,7 +109,7 @@ ul{
     text-align: right;
 	display: inline;
 	color:blue;
-	
+	width:50%;
 	
 }
 
