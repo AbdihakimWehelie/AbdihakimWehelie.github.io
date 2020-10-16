@@ -9,7 +9,7 @@
 */
 
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 470px) {
   body {
     padding: 0%;
   }
@@ -23,10 +23,10 @@
     display: inline-flexbox;
 	flex-wrap: nowrap;
 	background-size: contain;
-    background-color: green;
+    background-color: pink;
     color: purple;
     margin: 0%;
-    padding: 5%;
+    padding: 5px;
 	width:50%
 	color: green;
   }
@@ -34,21 +34,21 @@
 	  background-size: cover;
 	  display: flex;
 	  flex-wrap: nowrap;
-    padding: 5%;
+    padding: 5px;
     margin: 0%;
     width: 50%;
   }
   li {
     display: flexbox;
 	flex-wrap: nowrap;
-    padding: 5%;
+    padding: 5px;
     margin: 0%;
     padding-left: 0.7%;
     width: 25%;
     font-size: 90%;
   }
   li a {
-    padding: 5%;
+    padding: 5px;
     margin: 0%;
     display: flexbox;
     background-color: #D2B48C;
