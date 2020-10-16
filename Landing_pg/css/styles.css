@@ -9,26 +9,24 @@
 */
 
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 479px) {
   body {
     padding: 0%;
   }
   .grid-container {
     display: flex;
-	flex-wrap: wrap;
 	background-size: cover;
     
   }
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: #03fc67;
-	justify-content:column;/*change to column*/
+    background-color: yellow;
     color: purple;
     margin: 0%;
     padding: 0%;
-	
-	
+	width:50%
+	color: green;
   }
   .navbar__list {
 	  background-size: cover;
@@ -119,7 +117,6 @@ ul{
 	display: inline-block;
 	background-size: cover;
 	color:green;
-	width:80%;
 	
 }
 
