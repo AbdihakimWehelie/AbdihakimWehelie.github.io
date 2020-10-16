@@ -15,7 +15,6 @@
   }
   .grid-container {
     display: flex;
-	flex-basis: 50%; 
 	flex-wrap: wrap;
 	background-size: cover;
     
@@ -23,8 +22,8 @@
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: pink;
-	justify-content:row;
+    background-color: cyan;
+	justify-content:column;/*change to column*/
     color: purple;
     margin: 0%;
     padding: 0%;
