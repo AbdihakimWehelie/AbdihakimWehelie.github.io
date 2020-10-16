@@ -90,15 +90,15 @@ navbar__menu .menu__link {
     display: block;
 	background-size: cover;
     padding: 1em;
-    font-weight: italic;
+    font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #222;
+    background: #333;
 	background-size: cover;
-    color: #eee;
+    color: #fff;
     transition: ease 0.3s all;
 }
 
@@ -109,7 +109,7 @@ ul{
     text-align: right;
 	display: inline;
 	color:blue;
-	width:50%;
+	
 	
 }
 
