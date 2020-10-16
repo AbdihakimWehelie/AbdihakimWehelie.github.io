@@ -22,8 +22,8 @@
   .navbar__menu {
     display: inline-flexbox;
 	background-size: contain;
-    background-color: #03cefc;
-	justify-content:row;/*change to column*/
+    background-color: #03fc67;
+	justify-content:column;/*change to column*/
     color: purple;
     margin: 0%;
     padding: 0%;
