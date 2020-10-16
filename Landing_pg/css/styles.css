@@ -23,7 +23,7 @@
     display: inline-flexbox;
 	flex-wrap: nowrap;
 	background-size: contain;
-    background-color: pink;
+    background-color: cyan;
     color: purple;
     margin: 0%;
     padding: 5px;
@@ -89,7 +89,7 @@
 
 
 navbar__menu .menu__link {
-    display: block;
+    display: flex;
 	background-size: cover;
     padding: 1em;
     font-weight: bold;
