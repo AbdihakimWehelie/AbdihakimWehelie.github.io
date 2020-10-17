@@ -71,7 +71,7 @@ function scrollToSection() {
 			const linkName = link.getAttribute('href');
 			const linkNumber = linkName.substr(-1);
 			const section = sections[linkNumber-1];
-			const top = section.getBoundingClientRect().top + window.pageYOffset - navBar.offsetHeight;
+			const top = section.getBoundingClientRect().top + window.pageYOffset - navMenu.offsetHeight;
 			window.scrollTo({
 				top,
 				behavior: 'smooth'
