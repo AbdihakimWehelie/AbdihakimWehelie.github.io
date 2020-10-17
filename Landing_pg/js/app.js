@@ -53,6 +53,18 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+
+const mybutton2= document.getElementById("myBtn2");
+
+mybutton2.addEventListener('click', () => window.scrollTo({
+  top: 400,
+  behavior: 'smooth',
+}));
+
+
+
+
+
 const navbarMenu = document.getElementById('navbar__list');
 //select sections
 
