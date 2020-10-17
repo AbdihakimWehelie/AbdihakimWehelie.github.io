@@ -1,5 +1,8 @@
 //stores the class data of each section in the div
 const sections = document.querySelectorAll("section");
+const navbarMenu = document.getElementById('navbar__list');
+
+
 
 // creates the sections to be added to the nav, including links to their divs
 function makeNavLinks(section) {
@@ -83,10 +86,8 @@ function scrollToSection() {
 
 
 
-const navbarMenu = document.getElementById('navbar__list');
+
 //select sections
-
-
 
 function isSectionActive(){
 	
