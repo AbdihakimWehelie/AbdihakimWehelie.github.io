@@ -23,12 +23,10 @@
     display: flex;
 	flex-wrap: nowrap;
 	background-size: contain;
-    background-color: cyan;
+    background-color: yellow;
     color: purple;
     margin: 0%;
-    padding: 10%;
-	width:50%
-	color: green;
+    padding: 0%;
   }
   .navbar__list {
 	  background-size: cover;
@@ -129,7 +127,7 @@ ul{
 	margin: 0;
   padding: 0;
 	overflow: hidden;
-    display: inline-block;
+    display: flex;
 	background-size: cover;
 	color:green;
 }
