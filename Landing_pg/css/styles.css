@@ -23,8 +23,6 @@
     display: flex;
 	flex-wrap: nowrap;
 	background-size: contain;
-    background-color: yellow;
-    color: purple;
     margin: 0%;
     padding: 0%;
   }
