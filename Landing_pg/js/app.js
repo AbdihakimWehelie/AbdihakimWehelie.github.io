@@ -61,6 +61,23 @@ mybutton2.addEventListener('click', () => window.scrollTo({
   behavior: 'smooth',
 }));
 
+function scrollToSection() {
+	const links = document.querySelectorAll('a[href*=\\#]');
+
+	links.forEach( link => {
+		link.addEventListener('click', event => {
+			event.preventDefault();
+			const linkName = link.getAttribute('href');
+			const linkNumber = linkName.substr(-1);
+			const section = sections[linkNumber-1];
+			const top = section.getBoundingClientRect().top + window.pageYOffset - navBar.offsetHeight;
+			window.scrollTo({
+				top,
+				behavior: 'smooth'
+			});
+		});
+	});
+}
 
 
 
