@@ -30,6 +30,7 @@ function createMenu() {
 document.addEventListener("DOMContentLoaded", function() {
   //When the DOM is loaded, call the function to build the nav
   createMenu();
+  scrollToSection(); 
 }
 )
 
@@ -117,4 +118,5 @@ function isSectionActive(){
   
 document.addEventListener('scroll', function () {
     isSectionActive();
+	
 });
