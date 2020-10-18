@@ -60,12 +60,7 @@ function topFunction() {
 }
 
 
-const mybutton2= document.getElementById("myBtn2");
 
-mybutton2.addEventListener('click', () => window.scrollTo({
-  top: 400,
-  behavior: 'smooth',
-}));
 
 function scrollToSection() {
 	const links = document.querySelectorAll('a[href*=\\#]');
