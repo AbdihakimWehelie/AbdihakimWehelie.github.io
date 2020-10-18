@@ -33,7 +33,7 @@ function createMenu() {
 document.addEventListener("DOMContentLoaded", function() {
   //When the DOM is loaded, call the function to build the nav
   createMenu();
-  scrollToSection(); 
+  SectionScroll(); 
 }
 )
 
@@ -43,6 +43,8 @@ const mybutton = document.getElementById("myBtn");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
+
+//Hides button if user is at the top of webpage
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -51,7 +53,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// When the button is clicked by the user, scrolls to the top of the page
 function topFunction() {
  window.scrollTo({
 				top:0,
@@ -61,16 +63,16 @@ function topFunction() {
 
 
 
-
-function scrollToSection() {
+//when a section of the nav bar is clicked, gets the link for said section and scrolls to it
+function SectionScroll() {
 	const links = document.querySelectorAll('a[href*=\\#]');
 
 	links.forEach( link => {
 		link.addEventListener('click', event => {
-			event.preventDefault();
-			const linkName = link.getAttribute('href');
-			const linkNumber = linkName.substr(-1);
-			const section = sections[linkNumber-1];
+			event.preventDefault();//stops site from automatically following link
+			const sectionLink = link.getAttribute('href');
+			const num = sectionLink.substr(-1);
+			const section = sections[num-1];
 			const top = section.getBoundingClientRect().top + window.pageYOffset - navbarMenu.offsetHeight;
 			window.scrollTo({
 				top,
@@ -84,7 +86,7 @@ function scrollToSection() {
 
 
 
-//select sections
+//when a section is clicked, grants 'active' class to the section
 
 function isSectionActive(){
 	
