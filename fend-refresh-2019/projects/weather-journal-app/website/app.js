@@ -24,10 +24,11 @@ let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
 
 
 // event occurs when generate button is hit
-generatebtn.addEventListener("click" () => {
+generatebtn.addEventListener("click" , response);
+
+function response(){
 	
-	
-if(zip){
+	if(zip){
         getAPIData(zip)
         .then(data => {
             postData("/weather", {
@@ -54,8 +55,7 @@ if(zip){
 	
 	
 	
-		
-})
+}
 
 
 async function findWeather(url){
