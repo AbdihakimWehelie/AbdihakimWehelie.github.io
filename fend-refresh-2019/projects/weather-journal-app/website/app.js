@@ -1,7 +1,8 @@
 /* Global Variables */
 const zip=document.getElementById('zip');
+const city=document.getElementById('city');
 const generatebtn= document.getElementById('generate');
-const feels= document.getElementById('feelings')
+const feels= document.getElementById('feelings');
 
 // Create a new date instance dynamically with JS
 
@@ -29,9 +30,9 @@ generatebtn.addEventListener("click" , response);
 function response(){
 	
 	if(zip){
-        getAPIData(zip)
+        findWeather(zip)
         .then(data => {
-            postData("/weather", {
+            postWeather("/weather", {
                 place: data.name,
                 country: data.sys.country,
                 img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
@@ -51,16 +52,45 @@ function response(){
         .then(data => {
             getProjectData ("/all");
         })
-    }	
+    }
+
+
+	else if(city){
+        findWeather(city)
+        .then(data => {
+            postWeather("/weather", {
+                place: data.name,
+                country: data.sys.country,
+                img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+                windspeed: `${data.wind.speed} mi/h`, 
+                maxTemp: `${Math.round(data.main.temp_max)} °F`,
+                minTemp: `${Math.round(data.main.temp_min)} °F`,
+                humidity: `${Math.round(data.main.humidity)} %`,
+                temp: `${Math.round(data.main.temp)} °F`,
+                cloudPer: `${data.clouds.all} %`,
+                cloudiness: data.weather[0].description,
+                sunrise: formatUnixTime(data.sys.sunrise),
+                sunset: formatUnixTime(data.sys.sunset),
+                date: today,
+                userResponse: feels ? feels : ""
+            })
+        })
+        .then(data => {
+            getProjectData ("/all");
+        })
+    }
 	
-	
+	else
+	{
+		console.log("Bad data entered");
+	}
 	
 }
 
 
-async function findWeather(url){
+async function findWeather(place){
 	
-	const response= await fetch(url);
+	const response= await fetch(fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${place}&units=metric&appid=${apiKey}`));
 	
 	try{
 		const weatherData= await response.json();
@@ -76,7 +106,7 @@ async function findWeather(url){
 }
 
 
-async function postWeather(){
+async function postWeather(url, data){
 	
 	await fetch(url, {
 		method:'POST',
@@ -102,3 +132,10 @@ const updateUI = (data) => {
     document.querySelector(".js-windspeed").innerHTML = data.windspeed;
     document.querySelector(".js-content").innerHTML = data.userResponse;
 }
+
+
+
+
+
+
+
