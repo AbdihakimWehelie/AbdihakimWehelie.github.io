@@ -47,7 +47,7 @@ function response(){
                 //const date = dateTime();
                 const temperature = weatherData.main.temp.toFixed(0);
                 const feelings = feelingsInput.value;
-                postJournal('/add', { icon, newdate, temperature, feelings });
+                postJournal('/add', { icon, newdate, temperature, feels });
 
                 // Calls to update the site with latest entry
                 updateUI(degreeSystem);
