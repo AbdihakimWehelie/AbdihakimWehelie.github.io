@@ -4,14 +4,14 @@ body{
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
+    display: flex;
+    
+    /* grid-template-columns: grid-auto-rows: minmax(150px, auto); */
     height:100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
+    /*grid-gap: 1em;*/
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
