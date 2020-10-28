@@ -33,11 +33,11 @@ function response(){
 	const zipInput= zip.value;
 	const cityInput= city.value;
 	
-	if(zip){
+	if(zipInput){
 		
-			let url= API_ROOT_ZIP + zip + API_KEY;
+			let url= API_ROOT_ZIP + zipInput + API_KEY;
 			
-			findWeather(url)
+			/*findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
@@ -58,7 +58,7 @@ function response(){
                 return;
 				}
 			})
-			
+			*/
 		} 
 		
 		
@@ -66,10 +66,40 @@ function response(){
 		
 		
 		
-		else if (city) {
-			let url= API_ROOT_CITY + city + API_KEY;
+		else if (cityInput) {
+			let url= API_ROOT_CITY + cityInput + API_KEY;
 			
-			findWeather(url)
+			/*findWeather(url)
+			
+			.then(function (weatherData) {
+            const errorMessage = document.getElementById('error');
+              if (weatherData.cod == "200") {
+                errorMessage.classList.add('hide');
+                const icon = weatherData.weather[0].icon;
+                //const date = dateTime();
+                const temperature = weatherData.main.temp.toFixed(0);
+                const feelings = feelingsInput.value;
+                postJournal('/add', { icon, newdate, temperature, feelings });
+
+                // Calls to update the site with latest entry
+                updateUI(degreeSystem);
+
+				} else {
+                console.log('Bad data entered');
+               // errorMessage.classList.remove('hide');
+                return;
+				}
+			})*/
+		}
+        
+		
+		else
+	{
+		console.log("Bad data entered");
+	}
+		
+	
+	findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
@@ -91,14 +121,7 @@ function response(){
 				}
 			})
 		}
-        
-		
-		else
-	{
-		console.log("Bad data entered");
-	}
-		
-		
+	
 		
 }
 
