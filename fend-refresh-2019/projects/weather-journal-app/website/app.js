@@ -66,7 +66,7 @@ function response(){
 		else if (city) {
 			let url= API_ROOT_CITY + city + API_KEY;
 			
-			findWeather(url);
+			findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
