@@ -147,7 +147,7 @@ async function updateUI(data) {
     document.getElementById('date').innerHTML = `Date: ${latestEntry.date}`;
     document.getElementById('temp').innerHTML = `Temperature: ${latestEntry.temperature}\xB0${degreeSystem}`;
     document.getElementById('content').innerHTML = `Feelings: ${latestEntry.feelings}`;
-    document.getElementById('journal').classList.remove('hide');
+    document.getElementById('entryHolder').classList.remove('hide');
 }
 
 /*
