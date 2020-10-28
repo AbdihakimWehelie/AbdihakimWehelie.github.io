@@ -34,7 +34,7 @@ function response(){
 		
 			let url= API_ROOT_ZIP + zip + API_KEY;
 			
-			findWeather(url);
+			findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
