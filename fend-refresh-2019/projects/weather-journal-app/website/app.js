@@ -30,6 +30,9 @@ generatebtn.addEventListener("click" , response);
 
 function response(){
 	
+	const zipInput= zip.value;
+	const cityInput= city.value;
+	
 	if(zip){
 		
 			let url= API_ROOT_ZIP + zip + API_KEY;
