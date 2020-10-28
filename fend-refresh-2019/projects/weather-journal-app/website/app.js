@@ -140,7 +140,7 @@ async function postWeather(url, data){
 async function updateUI(data) {
      const response = await fetch('/retrieve');
     const latestEntry = await response.json();
-    document.getElementById('icon').innerHTML = `<img class="icon" src="http://openweathermap.org/img/wn/${latestEntry.icon}@2x.png" alt="Weather icon">`
+    document.getElementById('icon').innerHTML = `<img class="icon" src="https://openweathermap.org/img/wn/${latestEntry.icon}@2x.png" alt="Weather icon">`
     document.getElementById('date').innerHTML = `Date: ${latestEntry.date}`;
     document.getElementById('temp').innerHTML = `Temperature: ${latestEntry.temperature}\xB0${degreeSystem}`;
     document.getElementById('content').innerHTML = `Feelings: ${latestEntry.feelings}`;
