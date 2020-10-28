@@ -89,16 +89,22 @@ function response(){
 			})
 		}
         
-    }
-
-
-	
-	else
+		
+		else
 	{
 		console.log("Bad data entered");
 	}
-	
+		
+		
+		
 }
+
+
+
+
+	
+
+
 
 
 async function findWeather(url){
