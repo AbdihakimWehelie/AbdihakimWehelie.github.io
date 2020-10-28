@@ -37,7 +37,7 @@ function response(){
 		
 			let url= API_ROOT_ZIP + zipInput + API_KEY;
 			
-			/*findWeather(url)
+			findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
@@ -58,7 +58,7 @@ function response(){
                 return;
 				}
 			})
-			*/
+			
 		} 
 		
 		
@@ -69,37 +69,7 @@ function response(){
 		else if (cityInput) {
 			let url= API_ROOT_CITY + cityInput + API_KEY;
 			
-			/*findWeather(url)
-			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              if (weatherData.cod == "200") {
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                const feelings = feelingsInput.value;
-                postJournal('/add', { icon, newdate, temperature, feelings });
-
-                // Calls to update the site with latest entry
-                updateUI(degreeSystem);
-
-				} else {
-                console.log('Bad data entered');
-               // errorMessage.classList.remove('hide');
-                return;
-				}
-			})*/
-		}
-        
-		
-		else
-	{
-		console.log("Bad data entered");
-	}
-		
-	
-	findWeather(url)
+			findWeather(url)
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
@@ -120,6 +90,36 @@ function response(){
                 return;
 				}
 			})
+		}
+        
+		
+		else
+	{
+		console.log("Bad data entered");
+	}
+		
+	
+	/*findWeather(url)
+			
+			.then(function (weatherData) {
+            const errorMessage = document.getElementById('error');
+              if (weatherData.cod == "200") {
+                errorMessage.classList.add('hide');
+                const icon = weatherData.weather[0].icon;
+                //const date = dateTime();
+                const temperature = weatherData.main.temp.toFixed(0);
+                const feelings = feelingsInput.value;
+                postJournal('/add', { icon, newdate, temperature, feelings });
+
+                // Calls to update the site with latest entry
+                updateUI(degreeSystem);
+
+				} else {
+                console.log('Bad data entered');
+               // errorMessage.classList.remove('hide');
+                return;
+				}
+			})*/
 		
 	
 		
