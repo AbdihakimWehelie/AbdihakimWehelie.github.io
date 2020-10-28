@@ -31,55 +31,67 @@ generatebtn.addEventListener("click" , response);
 function response(){
 	
 	if(zip){
-        findWeather(zip)
-        .then(data => {
-            postWeather("/weather", {
-                place: data.name,
-                country: data.sys.country,
-                img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
-                windspeed: `${data.wind.speed} mi/h`, 
-                maxTemp: `${Math.round(data.main.temp_max)} °F`,
-                minTemp: `${Math.round(data.main.temp_min)} °F`,
-                humidity: `${Math.round(data.main.humidity)} %`,
-                temp: `${Math.round(data.main.temp)} °F`,
-                cloudPer: `${data.clouds.all} %`,
-                cloudiness: data.weather[0].description,
-                sunrise: formatUnixTime(data.sys.sunrise),
-                sunset: formatUnixTime(data.sys.sunset),
-                date: today,
-                userResponse: feels ? feels : ""
-            })
-        })
-        .then(data => {
-            getProjectData ("/all");
-        })
+		
+			let url= API_ROOT_ZIP + zip + API_KEY;
+			
+			findWeather(url);
+			
+			.then(function (weatherData) {
+            const errorMessage = document.getElementById('error');
+              if (weatherData.cod == "200") {
+                errorMessage.classList.add('hide');
+                const icon = weatherData.weather[0].icon;
+                //const date = dateTime();
+                const temperature = weatherData.main.temp.toFixed(0);
+                const feelings = feelingsInput.value;
+                postJournal('/add', { icon, newdate, temperature, feelings });
+
+                // Calls to update the site with latest entry
+                updateUI(degreeSystem);
+
+				} else {
+                console.log('Bad data entered');
+                errorMessage.classList.remove('hide');
+                return;
+				}
+			})
+			
+		} 
+		
+		
+		
+		
+		
+		
+		else if (city) {
+			let url= API_ROOT_CITY + city + API_KEY;
+			
+			findWeather(url);
+			
+			.then(function (weatherData) {
+            const errorMessage = document.getElementById('error');
+              if (weatherData.cod == "200") {
+                errorMessage.classList.add('hide');
+                const icon = weatherData.weather[0].icon;
+                //const date = dateTime();
+                const temperature = weatherData.main.temp.toFixed(0);
+                const feelings = feelingsInput.value;
+                postJournal('/add', { icon, newdate, temperature, feelings });
+
+                // Calls to update the site with latest entry
+                updateUI(degreeSystem);
+
+				} else {
+                console.log('Bad data entered');
+                errorMessage.classList.remove('hide');
+                return;
+				}
+			})
+		}
+        
     }
 
 
-	else if(city){
-        findWeather(city)
-        .then(data => {
-            postWeather("/weather", {
-                place: data.name,
-                country: data.sys.country,
-                img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
-                windspeed: `${data.wind.speed} mi/h`, 
-                maxTemp: `${Math.round(data.main.temp_max)} °F`,
-                minTemp: `${Math.round(data.main.temp_min)} °F`,
-                humidity: `${Math.round(data.main.humidity)} %`,
-                temp: `${Math.round(data.main.temp)} °F`,
-                cloudPer: `${data.clouds.all} %`,
-                cloudiness: data.weather[0].description,
-                sunrise: formatUnixTime(data.sys.sunrise),
-                sunset: formatUnixTime(data.sys.sunset),
-                date: today,
-                userResponse: feels ? feels : ""
-            })
-        })
-        .then(data => {
-            getProjectData ("/all");
-        })
-    }
 	
 	else
 	{
@@ -89,9 +101,8 @@ function response(){
 }
 
 
-async function findWeather(place){
-	
-	const response= await fetch(fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${place}&units=metric&appid=${apiKey}`));
+async function findWeather(url){
+	const response= await fetch(url);
 	
 	try{
 		const weatherData= await response.json();
@@ -121,22 +132,84 @@ async function postWeather(url, data){
 	
 //add the code to update the UI
 const updateUI = (data) => {
-    document.querySelector(".js-place").innerHTML = data.place;
-    document.querySelector(".js-country").innerHTML = data.country;
-    document.querySelector(".js-date").innerHTML = data.date;
-    document.querySelector(".js-img").setAttribute("src", data.img );
-    document.querySelector(".js-temp").innerHTML = data.temperature;
-    document.querySelector(".js-humidity").innerHTML = data.humidity;
-    document.querySelector(".js-cloudiness").innerHTML = data.cloudiness;
-    document.querySelector(".js-sunrise").innerHTML = data.sunrise;
-    document.querySelector(".js-sunset").innerHTML = data.sunset;
-    document.querySelector(".js-windspeed").innerHTML = data.windspeed;
-    document.querySelector(".js-content").innerHTML = data.userResponse;
+     const response = await fetch('/retrieve');
+    const latestEntry = await response.json();
+    document.getElementById('icon').innerHTML = `<img class="icon" src="http://openweathermap.org/img/wn/${latestEntry.icon}@2x.png" alt="Weather icon">`
+    document.getElementById('date').innerHTML = `Date: ${latestEntry.date}`;
+    document.getElementById('temp').innerHTML = `Temperature: ${latestEntry.temperature}\xB0${degreeSystem}`;
+    document.getElementById('content').innerHTML = `Feelings: ${latestEntry.feelings}`;
+    document.getElementById('journal').classList.remove('hide');
+}
+
+/*
+// Grabs the user's input, then forms URL, calls API, POSTS and updates UI
+function clickRespond() {
+
+    // Grab user's input
+    const zipInput = document.getElementById('zip');
+    const cityInput = document.getElementById('city');
+    const unitsInput = document.querySelector('input[name="units"]:checked')
+    const feelingsInput = document.getElementById('feelings');
+    let units;
+    let degreeSystem;
+    if (unitsInput) {
+        units = unitsInput.value;
+    } else {
+        units = "metric";
+    }
+    if (units == "metric") {
+        degreeSystem = "C";
+    } else {
+        degreeSystem = "F";
+    }
+
+    // Read values of zip and city
+    const zip = zipInput.value;
+    const city = cityInput.value;
+
+    // Form URL based on zip or city search
+    // (zip takes precendence if both were entered)
+    let url;
+    if (zip) {
+        url = API_ROOT_ZIP + zip + API_UNITS + units + API_KEY;
+    } else if (city) {
+        url = API_ROOT_CITY + city + API_UNITS + units + API_KEY;
+    }
+
+    // Call the API
+    getWeather(url)
+
+        // Prepares data for POST, calls the POST
+        .then(function (weatherData) {
+            const errorMessage = document.getElementById('error');
+            if (weatherData.cod == "200") {
+                errorMessage.classList.add('hide');
+                const icon = weatherData.weather[0].icon;
+                const date = dateTime();
+                const temperature = weatherData.main.temp.toFixed(0);
+                const feelings = feelingsInput.value;
+                postJournal('/add', { icon, date, temperature, feelings });
+
+                // Calls to update the site with latest entry
+                updateUI(degreeSystem);
+
+            } else {
+                console.log('Bad data entered');
+                errorMessage.classList.remove('hide');
+                return;
+            }
+        })
+}
+
+// Calls the API, converts response to JSON
+// returns weatherData JSON object
+async function getWeather(url) {
+    const response = await fetch(url);
+    const weatherData = await response.json();
+    return weatherData;
 }
 
 
 
-
-
-
+*/
 
