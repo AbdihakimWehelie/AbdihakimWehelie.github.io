@@ -6,13 +6,13 @@ const feels= document.getElementById('feelings');
 
 // Create a new date instance dynamically with JS
 
-const apiURL='http://api.openweathermap.org/data/2.5/weather?';
+const apiURL='https://api.openweathermap.org/data/2.5/weather?';
 
 // The URL root if user searches by zip code
-const API_ROOT_ZIP = 'http://api.openweathermap.org/data/2.5/weather?units=metric&zip=';
+const API_ROOT_ZIP = 'https://api.openweathermap.org/data/2.5/weather?units=metric&zip=';
 
 // The URL root if user searches by city
-const API_ROOT_CITY = 'http://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+const API_ROOT_CITY = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 
 //figure out how to hide it
 //const apiKey= `&appid=${config.API_KEY}`;
