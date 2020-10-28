@@ -41,7 +41,7 @@ function response(){
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
-              if (weatherData.cod == "200") {
+              if (weatherData) {
                 errorMessage.classList.add('hide');
                 const icon = weatherData.weather[0].icon;
                 //const date = dateTime();
@@ -73,7 +73,7 @@ function response(){
 			
 			.then(function (weatherData) {
             const errorMessage = document.getElementById('error');
-              if (weatherData.cod == "200") {
+              if (weatherData) {
                 errorMessage.classList.add('hide');
                 const icon = weatherData.weather[0].icon;
                 //const date = dateTime();
