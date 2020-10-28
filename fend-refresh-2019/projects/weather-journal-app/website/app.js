@@ -137,7 +137,7 @@ async function postWeather(url, data){
 	
 	
 //add the code to update the UI
-const updateUI = (data) => {
+async function updateUI = (data) => {
      const response = await fetch('/retrieve');
     const latestEntry = await response.json();
     document.getElementById('icon').innerHTML = `<img class="icon" src="http://openweathermap.org/img/wn/${latestEntry.icon}@2x.png" alt="Weather icon">`
