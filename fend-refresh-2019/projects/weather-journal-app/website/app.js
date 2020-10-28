@@ -86,7 +86,7 @@ function response(){
 
 				} else {
                 console.log('Bad data entered');
-                errorMessage.classList.remove('hide');
+               // errorMessage.classList.remove('hide');
                 return;
 				}
 			})
