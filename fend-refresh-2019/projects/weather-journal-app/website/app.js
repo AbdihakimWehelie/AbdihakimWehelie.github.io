@@ -19,8 +19,6 @@ const API_ROOT_CITY = 'https://api.openweathermap.org/data/2.5/weather?units=met
 const API_KEY='&appid=88bcfe9b8586144cdab20a4845e59c40';
 
 
-let date = new Date();
-let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
 
 
 
@@ -51,20 +49,19 @@ function response(e){
 	const zipInput= zip.value;
 	const cityInput= city.value;
 	const feedback= feels.value;
+	let date = new Date();
+	let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
+
 	if(zipInput){
 		
 			getWeather(API_ROOT_ZIP , zipInput ,API_KEY)
 			
 			
 			    .then(function(data) {
-          console.log(data);
-          let temp = data.main.temp;
-          console.log(temp);
-          postData('/add', {
-              date: newDate,
-              temp: temp,
-              feel: feedback
-            });
+          //console.log(data);
+          //let temp = data.main.temp;
+          //console.log(temp);
+          postData('/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
         })
       //chain UI update promise
       .then(function(){
