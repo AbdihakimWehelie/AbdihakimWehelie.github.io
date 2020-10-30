@@ -16,8 +16,9 @@ const API_ROOT_CITY = 'https://api.openweathermap.org/data/2.5/weather?units=met
 
 //figure out how to hide it
 //const apiKey= `&appid=${config.API_KEY}`;
-const API_KEY='&appid=88bcfe9b8586144cdab20a4845e59c40';
+//const API_KEY='&appid=88bcfe9b8586144cdab20a4845e59c40';
 
+const API_KEY='&appid=763095e1fbc6bc2d42956a7ad2';
 
 
 
