@@ -132,6 +132,11 @@ const postData = async (url = '', data = {}) => {
     }
 };
 
+
+
+
+
+
 //Update UI
 const updateUI = async () => {
     try {
@@ -145,7 +150,6 @@ const updateUI = async () => {
         console.log('Unable to update UI', error);
     }
 };
-
 	
 	
 //Old code
