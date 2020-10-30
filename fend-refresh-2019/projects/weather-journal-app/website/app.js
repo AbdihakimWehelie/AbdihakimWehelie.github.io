@@ -62,7 +62,7 @@ function response(e){
           postData('/add', {
               date: newDate,
               temp: temp,
-              feel: feeback
+              feel: feedback
             });
         })
       //chain UI update promise
@@ -87,7 +87,7 @@ function response(e){
           postData('/add', {
               date: newDate,
               temp: temp,
-              feel: feeback
+              feel: feedback
 				});
 			})
 		
