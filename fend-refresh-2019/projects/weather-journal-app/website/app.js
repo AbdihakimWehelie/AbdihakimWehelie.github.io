@@ -79,15 +79,11 @@ function response(e){
 			
 			
 			    .then(function(data) {
-          console.log(data);
-          let temp = data.main.temp;
-          console.log(temp);
-          postData('/add', {
-              date: newDate,
-              temp: temp,
-              feel: feedback
-				});
-			})
+          //console.log(data);
+          //let temp = data.main.temp;
+          //console.log(temp);
+          postData('/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
+        })
 		
 		//chain UI update promise
 		.then(function(){
