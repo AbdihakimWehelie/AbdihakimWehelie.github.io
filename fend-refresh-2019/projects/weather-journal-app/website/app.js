@@ -113,17 +113,16 @@ function response(e){
 
 
 //POST funtcion
-const  postData= async(url ='', data={})=>{
-	
-	const response= await fetch(url, {
-		method:'POST',
-		credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        // Body data type must match "Content-Type" header        
-        body: JSON.stringify(data)
+const postData = async (url = '', data = {}) => {
+    const response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
     });
-	
-	    console.log(response);
+    console.log(response);
     try {
         const newData = await response.json();
         console.log(newData);
@@ -131,9 +130,7 @@ const  postData= async(url ='', data={})=>{
     } catch (error) {
         console.log('Unable to POST data', error);
     }
-	
 };
-
 
 //Update UI
 const updateUI = async () => {
