@@ -139,7 +139,7 @@ const postData = async (url = '', data = {}) => {
 //Update UI
 const updateUI = async () => {
     try {
-        const request = await fetch('http://localhost:8000/all');
+        const request = await fetch('http://localhost:8000/add');
         console.log(request);
         const allData = await request.json();
         document.getElementById('date').innerHTML = `Today is ${allData.date}`;
