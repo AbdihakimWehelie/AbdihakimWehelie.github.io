@@ -62,7 +62,7 @@ function response(e){
           //console.log(data);
           //let temp = data.main.temp;
           //console.log(temp);
-          postData('/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
+          postData('http://localhost:8000/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
         })
       //chain UI update promise
       .then(function(){
@@ -83,7 +83,7 @@ function response(e){
           //console.log(data);
           //let temp = data.main.temp;
           //console.log(temp);
-          postData('/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
+          postData('http://localhost:8000/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
         })
 		
 		//chain UI update promise
@@ -139,7 +139,7 @@ const postData = async (url = '', data = {}) => {
 //Update UI
 const updateUI = async () => {
     try {
-        const request = await fetch('http://localhost:8000/add');
+        const request = await fetch('http://localhost:8000/all');
         console.log(request);
         const allData = await request.json();
         document.getElementById('date').innerHTML = `Today is ${allData.date}`;

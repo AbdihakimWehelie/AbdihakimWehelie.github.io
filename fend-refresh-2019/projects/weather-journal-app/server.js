@@ -68,7 +68,7 @@ function sendData (request, response) {
 app.post('/add', callBack);
 
 function callBack(req,res){
-      projectData['date'] = req.body.date;
+    projectData['date'] = req.body.date;
     projectData['temp'] = req.body.temp;
     projectData['feel'] = req.body.feel;
     res.send(projectData);
