@@ -24,95 +24,81 @@ let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
 
 
 
+const getWeather = async (baseURL, zip, cred) => {
+    const request = await fetch(baseURL + zip + cred);
+    try {
+        // Transform into JSON
+        const data = await request.json();
+        //console.log(data);
+        return data;
+    }
+    // appropriately handle the error
+    catch (error) {
+        console.log('data can not be fetched', error);
+    }
+};
+
+
+
+
 
 // event occurs when generate button is hit
 generatebtn.addEventListener("click" , response);
 
-function response(){
+function response(e){
 	
 	const zipInput= zip.value;
 	const cityInput= city.value;
-	
+	const feedback= feels.value;
 	if(zipInput){
 		
-			let url= API_ROOT_ZIP + zipInput + API_KEY;
+			getWeather(API_ROOT_ZIP , zipInput ,API_KEY)
 			
-			findWeather(url)
 			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                
-                postWeather('/add', { icon, newdate, temperature, feels });
-
-                // Calls to update the site with latest entry
-                updateUI();
-
-				 
+			    .then(function(data) {
+          console.log(data);
+          let temp = data.main.temp;
+          console.log(temp);
+          postData('/add', {
+              date: newDate,
+              temp: temp,
+              feel: feeback
+            });
+        })
+      //chain UI update promise
+      .then(function(){
+          updateUI()
+      });
+			
+		
+			
+	} 
+		
+		
+		
+		else if(cityInput) {
+				getWeather(API_ROOT_CITY , cityInput ,API_KEY)
+			
+			
+			    .then(function(data) {
+          console.log(data);
+          let temp = data.main.temp;
+          console.log(temp);
+          postData('/add', {
+              date: newDate,
+              temp: temp,
+              feel: feeback
+				});
 			})
+		
+		//chain UI update promise
+		.then(function(){
+          updateUI()
+		});
 			
-		} 
-		
-		
-		
-		
-		
-		
-		else if (cityInput) {
-			let url= API_ROOT_CITY + cityInput + API_KEY;
-			
-			findWeather(url)
-			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                
-                postWeather('/add', { icon, newdate, temperature, feelings });
-
-                // Calls to update the site with latest entry
-                updateUI();
-
-				 
-			})
-		}
+	}
         
-		
-		else
-	{
-		console.log("Bad data entered");
-	}
-		
 	
-	/*findWeather(url)
-			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              if (weatherData.cod == "200") {
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                const feelings = feelingsInput.value;
-                postJournal('/add', { icon, newdate, temperature, feelings });
-
-                // Calls to update the site with latest entry
-                updateUI(degreeSystem);
-
-				} else {
-                console.log('Bad data entered');
-               // errorMessage.classList.remove('hide');
-                return;
-				}
-			})*/
-		
 	
 		
 }
@@ -125,45 +111,47 @@ function response(){
 
 
 
-async function findWeather(url){
-	const response= await fetch(url);
-	
-	try{
-		const weatherData= await response.json();
-		return weatherData;
-	}
-	
-	
-	catch(e){
-		console.log("Error",e);
-	}
-	
-	
-}
 
-
-async function postWeather(url, data){
+//POST funtcion
+const  postWeather= async(url ='', data={})=>{
 	
-	await fetch(url, {
+	const response= await fetch(url, {
 		method:'POST',
 		credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
         // Body data type must match "Content-Type" header        
         body: JSON.stringify(data)
     });
-}
+	
+	    console.log(response);
+    try {
+        const newData = await response.json();
+        console.log(newData);
+        // appropriately handle the error
+    } catch (error) {
+        console.log('Unable to POST data', error);
+    }
+	
+};
+
+
+//Update UI
+const updateUI = async () => {
+    try {
+        const request = await fetch('/all');
+        console.log(request);
+        const allData = await request.json();
+        document.getElementById('date').innerHTML = `Today is ${allData.date}`;
+        document.getElementById('temp').innerHTML = `It is ${allData.temp} degrees outside.`;
+        document.getElementById('content').innerHTML = `Your latest journal entry: ${allData.feel}`;
+    } catch (error) {
+        console.log('Unable to update UI', error);
+    }
+};
+
 	
 	
-//add the code to update the UI
-const updateUI() = async() =>{
-     const response = await fetch('/retrieve');
-    const latestEntry = await response.json();
-    document.getElementById('icon').innerHTML = `<img class="icon" src="https://openweathermap.org/img/wn/${latestEntry.icon}@2x.png" alt="Weather icon">`
-    document.getElementById('date').innerHTML = `Date: ${latestEntry.date}`;
-    document.getElementById('temp').innerHTML = `Temperature: ${latestEntry.temperature}\xB0${degreeSystem}`;
-    document.getElementById('content').innerHTML = `Feelings: ${latestEntry.feelings}`;
-    document.getElementById('entryHolder').classList.remove('hide');
-}
+//Old code
 
 /*
 // Grabs the user's input, then forms URL, calls API, POSTS and updates UI
@@ -299,6 +287,37 @@ if(zipInput){
 	{
 		console.log("Bad data entered");
 	}
+
+
+async function findWeather(url){
+	const response= await fetch(url);
+	
+	try{
+		const weatherData= await response.json();
+		return weatherData;
+	}
+	
+	
+	catch(e){
+		console.log("Error",e);
+	}
+	
+	
+}
+
+
+async function postWeather(url, data){
+	
+	await fetch(url, {
+		method:'POST',
+		credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        // Body data type must match "Content-Type" header        
+        body: JSON.stringify(data)
+    });
+}
+
+
 
 
 */
