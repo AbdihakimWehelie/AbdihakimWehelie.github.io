@@ -70,7 +70,7 @@ app.post('/add', callBack);
 function callBack(req,res){
       projectData['date'] = request.body.date;
     projectData['temp'] = request.body.temp;
-    projectData['feel'] = request.body.feeling;
+    projectData['feel'] = request.body.feel;
     response.send(projectData);
   //res.send('POST received');
   console.log('POST received');
