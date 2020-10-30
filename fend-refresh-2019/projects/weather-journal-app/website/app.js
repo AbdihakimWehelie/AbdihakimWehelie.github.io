@@ -25,7 +25,8 @@ let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
 
 
 const getWeather = async (baseURL, zip, cred) => {
-    const request = await fetch(baseURL + zip + cred);
+    const Url=baseURL + zip + cred;
+	const request = await fetch(Url);
     try {
         // Transform into JSON
         const data = await request.json();
@@ -99,6 +100,10 @@ function response(e){
 	}
         
 	
+		else
+	{
+		console.log("Bad data entered");
+	}
 	
 		
 }
