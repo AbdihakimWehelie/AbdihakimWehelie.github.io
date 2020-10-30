@@ -61,14 +61,18 @@ app.get('/all', sendData);
 
 function sendData (request, response) {
   response.send(projectData);
-}
+  console.log('Response sent');
+};
 
 // POST route
 app.post('/add', callBack);
 
 function callBack(req,res){
-  projectData= req.body;
-  res.send('POST received');
-  console.log(projectData)
-}
+      projectData['date'] = request.body.date;
+    projectData['temp'] = request.body.temp;
+    projectData['feel'] = request.body.feeling;
+    response.send(projectData);
+  //res.send('POST received');
+  console.log('POST received');
+};
 
