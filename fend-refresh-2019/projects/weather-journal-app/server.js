@@ -70,8 +70,8 @@ app.post('/add', callBack);
 
 function callBack(req,res){
     projectData['date'] = req.body.date;
-    projectData['temp'] = req.body.temp;
-    projectData['feel'] = req.body.feel;
+    projectData['temperature'] = req.body.temperature;
+    projectData['userResponse'] = req.body.userResponse;
     res.send(projectData);
   //res.send('POST received');
   console.log('POST received');
