@@ -66,7 +66,7 @@ function response(e){
         })
       //chain UI update promise
       .then(function(){
-          updateUI('http://localhost:8000/add')
+          updateUI()
       });
 			
 		
@@ -143,9 +143,9 @@ const updateUI = async () => {
         console.log(request);
         const allData = await request.json();
 		//let allData = data[data.length - 1];
-        document.getElementById('date').innerHTML = 'Today is ' + allData.date;
-        document.getElementById('temp').innerHTML = 'It is ' +allData.temperature + ' degrees outside.';
-        document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData.userResponse;
+        document.getElementById('date').innerHTML = 'Today is ' + allData[0].date;
+        document.getElementById('temp').innerHTML = 'It is ' +allData[0].temperature + ' degrees outside.';
+        document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData[0].userResponse;
     } catch (error) {
         console.log('Unable to update UI', error);
     }
