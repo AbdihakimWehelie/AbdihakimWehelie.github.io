@@ -80,7 +80,7 @@ function response(e){
 			
 			
 			    .then(function(data) {
-          //console.log(data);
+          console.log(data);
           const temp = data.main.temp;
           //console.log(temp);
           postData('http://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
