@@ -147,7 +147,6 @@ const updateUI = async () => {
 		console.log(allData);
 		console.log(allData.date);
 		console.log(allData.temperature);
-		console.log(allData.temp);
         document.getElementById('date').innerHTML = 'Today is ' + allData.date;
         document.getElementById('temp').innerHTML = 'It is ' + allData.temperature + ' degrees outside.';
         document.getElementById('content').innerHTML = 'Your latest journal entry: ' + allData.userResponse;
