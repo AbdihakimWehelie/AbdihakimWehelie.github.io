@@ -114,6 +114,7 @@ function response(e){
 //POST funtcion
 const postData = async (url = '', data = {}) => {
     console.log(data);
+	console.log(url);
 	const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
