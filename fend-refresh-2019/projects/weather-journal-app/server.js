@@ -13,7 +13,7 @@ app.use(bodyParser.json());*/
 // Cors for cross origin allowance
 
 // Initialize the main project folder
-app.use(express.static('website'));
+
 
 
 // Setup Server
@@ -30,6 +30,7 @@ const express = require('express');
 /* Start up an instance of app */
 const app = express();
 
+app.use(express.static('website'));
 /* Dependencies */
 const bodyParser = require('body-parser')
 
