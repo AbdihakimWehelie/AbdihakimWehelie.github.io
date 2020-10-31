@@ -61,7 +61,7 @@ function response(e){
 			    .then(function(data) {
           console.log(data);
           const temp = data.main.temp;
-          //console.log(temp);
+          console.log(temp);
           postData('http://localhost:8000/add', {date: newDate, temperature: temp, userResponse: feedback});
         })
       //chain UI update promise
