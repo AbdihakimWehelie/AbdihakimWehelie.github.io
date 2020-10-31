@@ -6,7 +6,7 @@ const feels= document.getElementById('feelings');
 
 // Create a new date instance dynamically with JS
 
-const apiURL='https://api.openweathermap.org/data/2.5/weather?';
+
 
 // The URL root if user searches by zip code
 const API_ROOT_ZIP ='https://api.openweathermap.org/data/2.5/weather?units=metric&zip=';
@@ -82,8 +82,8 @@ function response(e){
 			    .then(function(data) {
           console.log(data);
           const temp = data.main.temp;
-          //console.log(temp);
-          postData('http://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
+          console.log(temp);
+          postData('http://localhost:8000/add', {date: newDate, temperature: temp, userResponse: feedback});
         })
 		
 		//chain UI update promise
@@ -113,15 +113,15 @@ function response(e){
 
 //POST funtcion
 const postData = async (url = '', data = {}) => {
-    console.log(data);
-	console.log(url);
+    console.log(data);//checking what's in data
+	console.log(url);// checking what link was carried
 	const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data,['date','temperature','userResponse']),
+        body: JSON.stringify(data),
     });
     console.log(response);
     try {
@@ -143,8 +143,7 @@ const updateUI = async () => {
     try {
         const request = await fetch('http://localhost:8000/all');
         console.log(request);
-        const allData = await request.json();
-		//let allData = data[data.length - 1];
+        const allData = await request.json();		
 		console.log(allData);
 		console.log(allData.date);
 		console.log(allData.temperature);
@@ -158,174 +157,3 @@ const updateUI = async () => {
 };
 	
 	
-//Old code
-
-/*
-// Grabs the user's input, then forms URL, calls API, POSTS and updates UI
-function clickRespond() {
-
-    // Grab user's input
-    const zipInput = document.getElementById('zip');
-    const cityInput = document.getElementById('city');
-    const unitsInput = document.querySelector('input[name="units"]:checked')
-    const feelingsInput = document.getElementById('feelings');
-    let units;
-    let degreeSystem;
-    if (unitsInput) {
-        units = unitsInput.value;
-    } else {
-        units = "metric";
-    }
-    if (units == "metric") {
-        degreeSystem = "C";
-    } else {
-        degreeSystem = "F";
-    }
-
-    // Read values of zip and city
-    const zip = zipInput.value;
-    const city = cityInput.value;
-
-    // Form URL based on zip or city search
-    // (zip takes precendence if both were entered)
-    let url;
-    if (zip) {
-        url = API_ROOT_ZIP + zip + API_UNITS + units + API_KEY;
-    } else if (city) {
-        url = API_ROOT_CITY + city + API_UNITS + units + API_KEY;
-    }
-
-    // Call the API
-    getWeather(url)
-
-        // Prepares data for POST, calls the POST
-        .then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-            if (weatherData.cod == "200") {
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                const feelings = feelingsInput.value;
-                postJournal('/add', { icon, date, temperature, feelings });
-
-                // Calls to update the site with latest entry
-                updateUI(degreeSystem);
-
-            } else {
-                console.log('Bad data entered');
-                errorMessage.classList.remove('hide');
-                return;
-            }
-        })
-}
-
-// Calls the API, converts response to JSON
-// returns weatherData JSON object
-async function getWeather(url) {
-    const response = await fetch(url);
-    const weatherData = await response.json();
-    return weatherData;
-}
-
-
-
-if(zipInput){
-		
-			let url= API_ROOT_ZIP + zipInput + API_KEY;
-			
-			findWeather(url)
-			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              if (weatherData) {
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                
-                postWeather('/add', { icon, newdate, temperature, feels });
-
-                // Calls to update the site with latest entry
-                updateUI();
-
-				} else {
-                console.log('Bad data entered');
-                //errorMessage.classList.remove('hide');
-                return;
-				}
-			})
-			
-		} 
-		
-		
-		
-		
-		
-		
-		else if (cityInput) {
-			let url= API_ROOT_CITY + cityInput + API_KEY;
-			
-			findWeather(url)
-			
-			.then(function (weatherData) {
-            const errorMessage = document.getElementById('error');
-              if (weatherData) {
-                errorMessage.classList.add('hide');
-                const icon = weatherData.weather[0].icon;
-                //const date = dateTime();
-                const temperature = weatherData.main.temp.toFixed(0);
-                
-                postWeather('/add', { icon, newdate, temperature, feelings });
-
-                // Calls to update the site with latest entry
-                updateUI({ icon, newdate, temperature, feelings });
-
-				} else {
-                console.log('Bad data entered');
-               // errorMessage.classList.remove('hide');
-                return;
-				}
-			})
-		}
-        
-		
-		else
-	{
-		console.log("Bad data entered");
-	}
-
-
-async function findWeather(url){
-	const response= await fetch(url);
-	
-	try{
-		const weatherData= await response.json();
-		return weatherData;
-	}
-	
-	
-	catch(e){
-		console.log("Error",e);
-	}
-	
-	
-}
-
-
-async function postWeather(url, data){
-	
-	await fetch(url, {
-		method:'POST',
-		credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        // Body data type must match "Content-Type" header        
-        body: JSON.stringify(data)
-    });
-}
-
-
-
-
-*/
-
