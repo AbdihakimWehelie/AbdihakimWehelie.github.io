@@ -143,6 +143,8 @@ const updateUI = async () => {
         console.log(request);
         const allData = await request.json();
 		//let allData = data[data.length - 1];
+		console.log(allData.date);
+		console.log(allData.temperature);
         document.getElementById('date').innerHTML = 'Today is ' + allData.date;
         document.getElementById('temp').innerHTML = 'It is ' +allData.temperature + ' degrees outside.';
         document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData.userResponse;
