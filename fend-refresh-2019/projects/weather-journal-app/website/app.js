@@ -66,7 +66,7 @@ function response(e){
         })
       //chain UI update promise
       .then(function(){
-          updateUI()
+          updateUI('http://localhost:8000/add')
       });
 			
 		
