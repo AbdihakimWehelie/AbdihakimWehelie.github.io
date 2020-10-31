@@ -144,8 +144,8 @@ const updateUI = async () => {
         const data = await request.json();
 		let allData = data[data.length - 1];
         document.getElementById('date').innerHTML = 'Today is ' + allData.date;
-        document.getElementById('temp').innerHTML = 'It is ' +allData.temp + ' degrees outside.';
-        document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData.feel;
+        document.getElementById('temp').innerHTML = 'It is ' +allData.temperature + ' degrees outside.';
+        document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData.userResponse;
     } catch (error) {
         console.log('Unable to update UI', error);
     }
