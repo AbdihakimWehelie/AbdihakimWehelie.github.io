@@ -75,5 +75,6 @@ function callBack(req,res){
     res.send(projectData);
   //res.send('POST received');
   console.log('POST received');
+  console.log(req.body.temperature);
 };
 
