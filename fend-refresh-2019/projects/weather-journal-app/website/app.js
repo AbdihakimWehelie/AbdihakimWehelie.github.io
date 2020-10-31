@@ -51,7 +51,7 @@ function response(e){
 	const cityInput= city.value;
 	const feedback= feels.value;
 	let date = new Date();
-	let newDate = date.getMonth()+'.'+ date.getDate()+'.'+ date.getFullYear();
+	let newDate = (date.getMonth()+1)+'.'+ date.getDate()+'.'+ date.getFullYear();
 
 	if(zipInput){
 		
