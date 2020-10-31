@@ -60,9 +60,9 @@ function response(e){
 			
 			    .then(function(data) {
           //console.log(data);
-          //let temp = data.main.temp;
+          const temp = data.main.temp;
           //console.log(temp);
-          postData('http://localhost:8000/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
+          postData('http://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
         })
       //chain UI update promise
       .then(function(){
@@ -81,9 +81,9 @@ function response(e){
 			
 			    .then(function(data) {
           //console.log(data);
-          //let temp = data.main.temp;
+          const temp = data.main.temp;
           //console.log(temp);
-          postData('http://localhost:8000/add', {temperature: data.main.temp, date: newDate, userResponse: feedback});
+          postData('http://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
         })
 		
 		//chain UI update promise
@@ -143,6 +143,7 @@ const updateUI = async () => {
         console.log(request);
         const allData = await request.json();
 		//let allData = data[data.length - 1];
+		console.log(allData);
 		console.log(allData.date);
 		console.log(allData.temperature);
 		console.log(allData.temp);
