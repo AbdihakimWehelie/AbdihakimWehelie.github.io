@@ -62,7 +62,7 @@ function response(e){
           console.log(data);
           const temp = data.main.temp;
           console.log(temp);
-          postData('http://localhost:8000/add', {date: newDate, temperature: temp, userResponse: feedback});
+          postData('https://localhost:8000/add', {date: newDate, temperature: temp, userResponse: feedback});
         })
       //chain UI update promise
       .then(function(){
@@ -83,7 +83,7 @@ function response(e){
           console.log(data);
           const temp = data.main.temp;
           //console.log(temp);
-          postData('http://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
+          postData('https://localhost:8000/add', {temperature: temp, date: newDate, userResponse: feedback});
         })
 		
 		//chain UI update promise
