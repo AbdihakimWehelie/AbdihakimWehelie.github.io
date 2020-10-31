@@ -141,8 +141,9 @@ const updateUI = async () => {
     try {
         const request = await fetch('http://localhost:8000/all');
         console.log(request);
-        const allData = await request.json();
-        document.getElementById('date').innerHTML = 'Today is' + allData.date;
+        const data = await request.json();
+		let allData = data[data.length - 1];
+        document.getElementById('date').innerHTML = 'Today is ' + allData.date;
         document.getElementById('temp').innerHTML = 'It is ' +allData.temp + ' degrees outside.';
         document.getElementById('content').innerHTML = 'Your latest journal entry: ' +allData.feel;
     } catch (error) {
