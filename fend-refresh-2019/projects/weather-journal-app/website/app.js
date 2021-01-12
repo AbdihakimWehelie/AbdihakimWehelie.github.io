@@ -14,9 +14,8 @@ const API_ROOT_ZIP ='https://api.openweathermap.org/data/2.5/weather?units=metri
 // The URL root if user searches by city
 const API_ROOT_CITY ='https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 
-//figure out how to hide it
-//const apiKey= `&appid=${config.API_KEY}`;
-const API_KEY='&appid=88bcfe9b8586144cdab20a4845e59c40';
+//user adds their API key from OpenWeatherMap
+const API_KEY='&appid=Your Key goes here';
 
 
 
